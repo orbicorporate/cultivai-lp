@@ -99,13 +99,6 @@ tailwind.config = {
 
 /* alertas de manejo bell (adicionado) */
 /* checklist do hero + brilho dos CTAs (adicionado) */
-@keyframes checkPop{
-  0%{ opacity:0; transform:scale(.4) translateY(6px); }
-  60%{ opacity:1; transform:scale(1.18) translateY(0); }
-  100%{ transform:scale(1) translateY(0); }
-}
-.check-pop{ opacity:0; animation:checkPop .55s cubic-bezier(.34,1.56,.64,1) forwards; }
-.check-pop-icon{ filter:drop-shadow(0 0 5px rgba(74,222,128,.85)); }
 
 /* seção "culturas mais lucrativas": checklist com entrada escalonada ligada ao scroll */
 .check-reveal{ opacity:0; transform:translateY(14px) scale(.96); transition:opacity .5s ease, transform .5s cubic-bezier(.34,1.2,.64,1), border-color .3s ease, box-shadow .3s ease; }
@@ -189,21 +182,21 @@ tailwind.config = {
       <p class="font-body-lg text-lg md:text-xl text-primary-fixed/70 mb-6 max-w-xl mx-auto lg:mx-0 leading-relaxed hero-anim" style="animation-delay:.28s">
         <span class="text-sprout-green font-bold">Do quintal de casa a grandes fazendas</span>, com inteligência e precisão pra cada cultura. Calcule e planeje:
       </p>
-      <div class="flex flex-wrap gap-3 justify-center lg:justify-start mb-10">
-        <div class="check-pop inline-flex items-center gap-2 bg-white/10 border border-sprout-green/40 backdrop-blur-sm rounded-full pl-2.5 pr-4 py-2" style="animation-delay:0.15s">
-          <span class="check-pop-icon material-symbols-outlined text-sprout-green text-lg">check_circle</span>
+      <div class="check-reveal-group hero-pill-group flex flex-wrap gap-3 justify-center lg:justify-start mb-10">
+        <div class="check-reveal inline-flex items-center gap-2 bg-white/10 border border-sprout-green/40 backdrop-blur-sm rounded-full pl-2.5 pr-4 py-2" style="transition-delay:0.00s">
+          <span class="check-reveal-icon material-symbols-outlined text-sprout-green text-lg">check_circle</span>
           <span class="text-white font-bold text-sm tracking-wide">Lucro</span>
         </div>
-        <div class="check-pop inline-flex items-center gap-2 bg-white/10 border border-sprout-green/40 backdrop-blur-sm rounded-full pl-2.5 pr-4 py-2" style="animation-delay:0.30s">
-          <span class="check-pop-icon material-symbols-outlined text-sprout-green text-lg">check_circle</span>
+        <div class="check-reveal inline-flex items-center gap-2 bg-white/10 border border-sprout-green/40 backdrop-blur-sm rounded-full pl-2.5 pr-4 py-2" style="transition-delay:0.12s">
+          <span class="check-reveal-icon material-symbols-outlined text-sprout-green text-lg">check_circle</span>
           <span class="text-white font-bold text-sm tracking-wide">Safras</span>
         </div>
-        <div class="check-pop inline-flex items-center gap-2 bg-white/10 border border-sprout-green/40 backdrop-blur-sm rounded-full pl-2.5 pr-4 py-2" style="animation-delay:0.45s">
-          <span class="check-pop-icon material-symbols-outlined text-sprout-green text-lg">check_circle</span>
+        <div class="check-reveal inline-flex items-center gap-2 bg-white/10 border border-sprout-green/40 backdrop-blur-sm rounded-full pl-2.5 pr-4 py-2" style="transition-delay:0.24s">
+          <span class="check-reveal-icon material-symbols-outlined text-sprout-green text-lg">check_circle</span>
           <span class="text-white font-bold text-sm tracking-wide">Demanda</span>
         </div>
-        <div class="check-pop inline-flex items-center gap-2 bg-white/10 border border-sprout-green/40 backdrop-blur-sm rounded-full pl-2.5 pr-4 py-2" style="animation-delay:0.60s">
-          <span class="check-pop-icon material-symbols-outlined text-sprout-green text-lg">check_circle</span>
+        <div class="check-reveal inline-flex items-center gap-2 bg-white/10 border border-sprout-green/40 backdrop-blur-sm rounded-full pl-2.5 pr-4 py-2" style="transition-delay:0.36s">
+          <span class="check-reveal-icon material-symbols-outlined text-sprout-green text-lg">check_circle</span>
           <span class="text-white font-bold text-sm tracking-wide">Custos</span>
         </div>
       </div>
