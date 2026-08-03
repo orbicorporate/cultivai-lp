@@ -98,6 +98,24 @@ tailwind.config = {
   border:3px solid #F97316; transform:translate(0,-50%); box-shadow:0 0 0 4px rgba(249,115,22,.15); }
 
 /* alertas de manejo bell (adicionado) */
+/* checklist do hero + brilho dos CTAs (adicionado) */
+@keyframes checkPop{
+  0%{ opacity:0; transform:scale(.4) translateY(6px); }
+  60%{ opacity:1; transform:scale(1.18) translateY(0); }
+  100%{ transform:scale(1) translateY(0); }
+}
+.check-pop{ opacity:0; animation:checkPop .55s cubic-bezier(.34,1.56,.64,1) forwards; }
+.check-pop-icon{ animation: iconGlow 2.4s ease-in-out infinite; }
+@keyframes iconGlow{
+  0%,100%{ filter:drop-shadow(0 0 0px rgba(74,222,128,0)); }
+  50%{ filter:drop-shadow(0 0 5px rgba(74,222,128,.9)); }
+}
+@keyframes ctaGlow{
+  0%,100%{ box-shadow:0 0 0px 0px rgba(74,222,128,0); }
+  50%{ box-shadow:0 0 30px 8px rgba(74,222,128,.55); }
+}
+.cta-glow{ animation: ctaGlow 2.4s ease-in-out infinite; }
+
 @keyframes bellRing{
   0%,20%,100%{ transform:rotate(0); }
   4%{ transform:rotate(14deg); }
@@ -164,11 +182,29 @@ tailwind.config = {
       <h1 class="font-display-lg text-4xl md:text-6xl text-white mb-8 leading-[1.1] font-extrabold hero-anim" style="animation-delay:.15s">
         Antes de plantar, veja se <span class="text-transparent bg-clip-text bg-gradient-to-r from-sprout-green to-secondary-fixed">compensa</span>.
       </h1>
-      <p class="font-body-lg text-lg md:text-xl text-primary-fixed/70 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed hero-anim" style="animation-delay:.28s">
-        <span class="text-sprout-green font-bold">Do quintal de casa a grandes fazendas</span>, calcule e planeje lucro, safras, demanda e custos em detalhes de cada cultura, com inteligência e precisão.
+      <p class="font-body-lg text-lg md:text-xl text-primary-fixed/70 mb-6 max-w-xl mx-auto lg:mx-0 leading-relaxed hero-anim" style="animation-delay:.28s">
+        <span class="text-sprout-green font-bold">Do quintal de casa a grandes fazendas</span>, com inteligência e precisão pra cada cultura. Calcule e planeje:
       </p>
+      <div class="flex flex-wrap gap-3 justify-center lg:justify-start mb-10">
+        <div class="check-pop inline-flex items-center gap-2 bg-white/10 border border-sprout-green/40 backdrop-blur-sm rounded-full pl-2.5 pr-4 py-2" style="animation-delay:0.15s">
+          <span class="check-pop-icon material-symbols-outlined text-sprout-green text-lg">check_circle</span>
+          <span class="text-white font-bold text-sm tracking-wide">Lucro</span>
+        </div>
+        <div class="check-pop inline-flex items-center gap-2 bg-white/10 border border-sprout-green/40 backdrop-blur-sm rounded-full pl-2.5 pr-4 py-2" style="animation-delay:0.30s">
+          <span class="check-pop-icon material-symbols-outlined text-sprout-green text-lg">check_circle</span>
+          <span class="text-white font-bold text-sm tracking-wide">Safras</span>
+        </div>
+        <div class="check-pop inline-flex items-center gap-2 bg-white/10 border border-sprout-green/40 backdrop-blur-sm rounded-full pl-2.5 pr-4 py-2" style="animation-delay:0.45s">
+          <span class="check-pop-icon material-symbols-outlined text-sprout-green text-lg">check_circle</span>
+          <span class="text-white font-bold text-sm tracking-wide">Demanda</span>
+        </div>
+        <div class="check-pop inline-flex items-center gap-2 bg-white/10 border border-sprout-green/40 backdrop-blur-sm rounded-full pl-2.5 pr-4 py-2" style="animation-delay:0.60s">
+          <span class="check-pop-icon material-symbols-outlined text-sprout-green text-lg">check_circle</span>
+          <span class="text-white font-bold text-sm tracking-wide">Custos</span>
+        </div>
+      </div>
       <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start hero-anim" style="animation-delay:.4s">
-        <a href="https://easyfarm-nine.vercel.app" target="_blank" rel="noopener" class="bg-sprout-green text-deep-earth px-10 py-5 rounded-full font-bold text-lg hover:scale-105 hover:shadow-2xl hover:shadow-sprout-green/30 transition-all active:scale-95 text-center">Começar Grátis</a>
+        <a href="https://easyfarm-nine.vercel.app" target="_blank" rel="noopener" class="bg-sprout-green text-deep-earth px-10 py-5 rounded-full font-bold text-lg hover:scale-105 hover:shadow-2xl hover:shadow-sprout-green/30 transition-all active:scale-95 text-center cta-glow">Começar Grátis</a>
       </div>
       <div class="mt-12 flex items-center justify-center lg:justify-start gap-8 opacity-70 hover:opacity-100 transition-all hero-anim" style="animation-delay:.5s">
         <div class="flex flex-col items-center lg:items-start"><span class="text-white font-bold text-lg leading-tight">117 culturas no catálogo</span></div>
@@ -732,7 +768,7 @@ tailwind.config = {
       <div class="relative z-10">
         <h2 class="font-display-lg text-3xl md:text-5xl text-white mb-10 font-extrabold leading-tight max-w-2xl mx-auto">Inicie agora o seu planejamento <span class="text-harvest-gold">lucrativo</span> e <span class="text-harvest-gold">inteligente</span></h2>
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
-          <a href="https://easyfarm-nine.vercel.app" target="_blank" rel="noopener" class="bg-sprout-green text-deep-earth px-12 py-5 rounded-full font-bold text-xl hover:scale-105 transition-all shadow-xl">Criar Minha Conta</a>
+          <a href="https://easyfarm-nine.vercel.app" target="_blank" rel="noopener" class="bg-sprout-green text-deep-earth px-12 py-5 rounded-full font-bold text-xl hover:scale-105 transition-all shadow-xl cta-glow">Criar Minha Conta</a>
         </div>
       </div>
       <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#4ADE80 1px, transparent 1px); background-size: 40px 40px;"></div>
