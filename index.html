@@ -105,11 +105,15 @@ tailwind.config = {
   100%{ transform:scale(1) translateY(0); }
 }
 .check-pop{ opacity:0; animation:checkPop .55s cubic-bezier(.34,1.56,.64,1) forwards; }
-.check-pop-icon{ animation: iconGlow 2.4s ease-in-out infinite; }
-@keyframes iconGlow{
-  0%,100%{ filter:drop-shadow(0 0 0px rgba(74,222,128,0)); }
-  50%{ filter:drop-shadow(0 0 5px rgba(74,222,128,.9)); }
-}
+.check-pop-icon{ filter:drop-shadow(0 0 5px rgba(74,222,128,.85)); }
+
+/* seção "culturas mais lucrativas": checklist com entrada escalonada ligada ao scroll */
+.check-reveal{ opacity:0; transform:translateY(14px) scale(.96); transition:opacity .5s ease, transform .5s cubic-bezier(.34,1.2,.64,1), border-color .3s ease, box-shadow .3s ease; }
+.check-reveal-group.in-view .check-reveal{ opacity:1; transform:translateY(0) scale(1); }
+.check-reveal-group.in-view .check-reveal:hover{ border-color:rgba(74,222,128,.5); box-shadow:0 6px 18px rgba(74,222,128,.15); }
+.check-reveal-icon{ transition:filter .4s ease; }
+.check-reveal-group.in-view .check-reveal-icon{ filter:drop-shadow(0 0 4px rgba(74,222,128,.7)); }
+
 @keyframes ctaGlow{
   0%,100%{ box-shadow:0 0 0px 0px rgba(74,222,128,0); }
   50%{ box-shadow:0 0 30px 8px rgba(74,222,128,.55); }
@@ -354,42 +358,42 @@ tailwind.config = {
       <span class="text-secondary font-bold text-sm tracking-widest uppercase mb-4 block">Planejamento por região</span>
       <h2 class="font-display-lg text-4xl md:text-5xl text-deep-earth mb-6 font-bold">Culturas mais lucrativas <span class="text-secondary">na sua região</span></h2>
       <p class="text-body-lg text-on-surface-variant mb-10 leading-relaxed">Escolha sua região e o Easyfarm já mostra quais culturas rendem mais por lá — com números reais de mercado, não achismo. Cada simulação cruza:</p>
-      <div class="grid sm:grid-cols-2 gap-4">
-          <div class="flex items-center gap-3 text-left">
-            <span class="material-symbols-outlined text-secondary text-lg shrink-0">check_circle</span>
-            <span class="text-deep-earth text-sm font-medium">Preço de venda no atacado</span>
+      <div class="check-reveal-group grid sm:grid-cols-2 gap-3">
+          <div class="check-reveal flex items-center gap-3 text-left bg-white rounded-xl px-4 py-3 border border-outline-variant/30 shadow-sm" style="transition-delay:0.00s">
+            <span class="material-symbols-outlined text-secondary text-xl shrink-0 check-reveal-icon">check_circle</span>
+            <span class="text-deep-earth text-sm font-bold">Preço de venda no atacado</span>
           </div>
-          <div class="flex items-center gap-3 text-left">
-            <span class="material-symbols-outlined text-secondary text-lg shrink-0">check_circle</span>
-            <span class="text-deep-earth text-sm font-medium">Preço de venda no varejo</span>
+          <div class="check-reveal flex items-center gap-3 text-left bg-white rounded-xl px-4 py-3 border border-outline-variant/30 shadow-sm" style="transition-delay:0.08s">
+            <span class="material-symbols-outlined text-secondary text-xl shrink-0 check-reveal-icon">check_circle</span>
+            <span class="text-deep-earth text-sm font-bold">Preço de venda no varejo</span>
           </div>
-          <div class="flex items-center gap-3 text-left">
-            <span class="material-symbols-outlined text-secondary text-lg shrink-0">check_circle</span>
-            <span class="text-deep-earth text-sm font-medium">Custo com manejo</span>
+          <div class="check-reveal flex items-center gap-3 text-left bg-white rounded-xl px-4 py-3 border border-outline-variant/30 shadow-sm" style="transition-delay:0.16s">
+            <span class="material-symbols-outlined text-secondary text-xl shrink-0 check-reveal-icon">check_circle</span>
+            <span class="text-deep-earth text-sm font-bold">Custo com manejo</span>
           </div>
-          <div class="flex items-center gap-3 text-left">
-            <span class="material-symbols-outlined text-secondary text-lg shrink-0">check_circle</span>
-            <span class="text-deep-earth text-sm font-medium">Custo com sementes</span>
+          <div class="check-reveal flex items-center gap-3 text-left bg-white rounded-xl px-4 py-3 border border-outline-variant/30 shadow-sm" style="transition-delay:0.24s">
+            <span class="material-symbols-outlined text-secondary text-xl shrink-0 check-reveal-icon">check_circle</span>
+            <span class="text-deep-earth text-sm font-bold">Custo com sementes</span>
           </div>
-          <div class="flex items-center gap-3 text-left">
-            <span class="material-symbols-outlined text-secondary text-lg shrink-0">check_circle</span>
-            <span class="text-deep-earth text-sm font-medium">Custo de mão de obra</span>
+          <div class="check-reveal flex items-center gap-3 text-left bg-white rounded-xl px-4 py-3 border border-outline-variant/30 shadow-sm" style="transition-delay:0.32s">
+            <span class="material-symbols-outlined text-secondary text-xl shrink-0 check-reveal-icon">check_circle</span>
+            <span class="text-deep-earth text-sm font-bold">Custo de mão de obra</span>
           </div>
-          <div class="flex items-center gap-3 text-left">
-            <span class="material-symbols-outlined text-secondary text-lg shrink-0">check_circle</span>
-            <span class="text-deep-earth text-sm font-medium">Custo com insumos</span>
+          <div class="check-reveal flex items-center gap-3 text-left bg-white rounded-xl px-4 py-3 border border-outline-variant/30 shadow-sm" style="transition-delay:0.40s">
+            <span class="material-symbols-outlined text-secondary text-xl shrink-0 check-reveal-icon">check_circle</span>
+            <span class="text-deep-earth text-sm font-bold">Custo com insumos</span>
           </div>
-          <div class="flex items-center gap-3 text-left">
-            <span class="material-symbols-outlined text-secondary text-lg shrink-0">check_circle</span>
-            <span class="text-deep-earth text-sm font-medium">Demanda por região</span>
+          <div class="check-reveal flex items-center gap-3 text-left bg-white rounded-xl px-4 py-3 border border-outline-variant/30 shadow-sm" style="transition-delay:0.48s">
+            <span class="material-symbols-outlined text-secondary text-xl shrink-0 check-reveal-icon">check_circle</span>
+            <span class="text-deep-earth text-sm font-bold">Demanda por região</span>
           </div>
-          <div class="flex items-center gap-3 text-left">
-            <span class="material-symbols-outlined text-secondary text-lg shrink-0">check_circle</span>
-            <span class="text-deep-earth text-sm font-medium">Clima da sua área</span>
+          <div class="check-reveal flex items-center gap-3 text-left bg-white rounded-xl px-4 py-3 border border-outline-variant/30 shadow-sm" style="transition-delay:0.56s">
+            <span class="material-symbols-outlined text-secondary text-xl shrink-0 check-reveal-icon">check_circle</span>
+            <span class="text-deep-earth text-sm font-bold">Clima da sua área</span>
           </div>
-          <div class="flex items-center gap-3 text-left">
-            <span class="material-symbols-outlined text-secondary text-lg shrink-0">check_circle</span>
-            <span class="text-deep-earth text-sm font-medium">E muito mais</span>
+          <div class="check-reveal flex items-center gap-3 text-left bg-white rounded-xl px-4 py-3 border border-outline-variant/30 shadow-sm" style="transition-delay:0.64s">
+            <span class="material-symbols-outlined text-secondary text-xl shrink-0 check-reveal-icon">check_circle</span>
+            <span class="text-deep-earth text-sm font-bold">E muito mais</span>
           </div>
       </div>
     </div>
@@ -999,7 +1003,7 @@ tailwind.config = {
       <p class="text-center text-on-surface-variant text-sm hidden" id="catalogEmpty">Nenhuma cultura encontrada.</p>
     </div>
     <div class="p-6 border-t border-outline-variant/30 bg-surface-container-low text-center shrink-0">
-      <a class="bg-sprout-green text-deep-earth px-8 py-3 rounded-full font-bold text-sm hover:scale-105 transition-all inline-block" href="https://easyfarm-nine.vercel.app" rel="noopener" target="_blank">Simular o lucro de uma cultura →</a>
+      <a class="bg-sprout-green text-deep-earth px-8 py-3 rounded-full font-bold text-sm hover:scale-105 transition-all inline-block cta-glow" href="https://easyfarm-nine.vercel.app" rel="noopener" target="_blank">Simular o lucro de uma cultura →</a>
     </div>
   </div>
 </div>
@@ -1025,6 +1029,13 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => {
   el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
   observer.observe(el);
+});
+
+document.querySelectorAll('.check-reveal-group').forEach(group => {
+  const groupObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('in-view'); groupObserver.unobserve(entry.target); } });
+  }, { threshold: 0.2 });
+  groupObserver.observe(group);
 });
 
 const sticky = document.getElementById('mobileSticky');
