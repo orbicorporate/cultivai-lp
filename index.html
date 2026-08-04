@@ -149,6 +149,30 @@ tailwind.config = {
 .pill-3d-soft:active{ transform:translateY(-1px) scale(.97); }
 .pill-3d-soft-green{ background:linear-gradient(180deg,#8FF5B4 0%,#4ADE80 50%,#26C46B 100%); }
 
+/* --- Cartoes organicos em tons pasteis com textura (adicionado) --- */
+.card-organic{
+  position:relative; isolation:isolate; border-radius:1.75rem;
+  box-shadow:0 16px 32px -10px rgba(11,45,31,.32), 0 4px 10px rgba(11,45,31,.14);
+  transition:transform .35s cubic-bezier(.34,1.1,.64,1), box-shadow .35s ease;
+}
+.card-organic::before{
+  content:''; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  background:
+    radial-gradient(120% 90% at 15% -10%, rgba(255,255,255,.28) 0%, transparent 55%),
+    radial-gradient(90% 70% at 100% 115%, rgba(0,0,0,.16) 0%, transparent 55%);
+}
+.card-organic:hover{ transform:translateY(-7px); box-shadow:0 24px 44px -10px rgba(11,45,31,.4), 0 8px 16px rgba(11,45,31,.18); }
+.tone-sage{ background:linear-gradient(155deg,#B7CFA6 0%,#8CAE79 48%,#67885A 100%); }
+.tone-terracotta{ background:linear-gradient(155deg,#B98868 0%,#93624A 48%,#6E4732 100%); }
+.tone-tan{ background:linear-gradient(155deg,#E3CDA3 0%,#CBA876 48%,#A9835B 100%); }
+.icon-organic{
+  position:relative; z-index:1;
+  background:rgba(255,255,255,.20);
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.45), inset 0 -3px 6px rgba(0,0,0,.18), 0 4px 10px rgba(0,0,0,.18);
+}
+.card-organic-label{ position:relative; z-index:1; }
+
+
 
 
 /* --- Fundos com degradê orgânico --- */
@@ -375,33 +399,33 @@ tailwind.config = {
         <span class="text-white font-bold">Quer produzir certo e lucrar mais com o seu pedaço de terra?</span> Saiba o que exatamente plantar na sua região para ter maior margem.
       </p>
       <div class="check-reveal-group hero-pill-group flex flex-wrap gap-3 justify-center lg:justify-start mb-10">
-        <div class="check-reveal pill-3d-soft pill-3d-soft-green inline-flex items-center gap-2.5 rounded-full pl-4 pr-5 py-3" style="transition-delay:0.00s">
-          <span class="check-reveal-icon pill-3d-icon material-symbols-outlined text-white text-xl">check_circle</span>
-          <span class="pill-3d-icon text-white font-bold text-[15px] tracking-wide" style="text-shadow:0 1px 2px rgba(0,0,0,.2)">Cálculo inteligente</span>
+        <div class="check-reveal card-organic tone-sage inline-flex items-center gap-2.5 rounded-full pl-4 pr-5 py-3" style="transition-delay:0.00s">
+          <span class="check-reveal-icon icon-organic material-symbols-outlined text-white text-xl" style="border-radius:9999px;padding:2px;">check_circle</span>
+          <span class="card-organic-label text-white font-bold text-[15px] tracking-wide" style="text-shadow:0 1px 2px rgba(0,0,0,.25)">Cálculo inteligente</span>
         </div>
-        <div class="check-reveal pill-3d-soft pill-3d-soft-green inline-flex items-center gap-2.5 rounded-full pl-4 pr-5 py-3" style="transition-delay:0.10s">
-          <span class="check-reveal-icon pill-3d-icon material-symbols-outlined text-white text-xl">check_circle</span>
-          <span class="pill-3d-icon text-white font-bold text-[15px] tracking-wide" style="text-shadow:0 1px 2px rgba(0,0,0,.2)">Planejamento</span>
+        <div class="check-reveal card-organic tone-terracotta inline-flex items-center gap-2.5 rounded-full pl-4 pr-5 py-3" style="transition-delay:0.10s">
+          <span class="check-reveal-icon icon-organic material-symbols-outlined text-white text-xl" style="border-radius:9999px;padding:2px;">check_circle</span>
+          <span class="card-organic-label text-white font-bold text-[15px] tracking-wide" style="text-shadow:0 1px 2px rgba(0,0,0,.25)">Planejamento</span>
         </div>
-        <div class="check-reveal pill-3d-soft pill-3d-soft-green inline-flex items-center gap-2.5 rounded-full pl-4 pr-5 py-3" style="transition-delay:0.20s">
-          <span class="check-reveal-icon pill-3d-icon material-symbols-outlined text-white text-xl">check_circle</span>
-          <span class="pill-3d-icon text-white font-bold text-[15px] tracking-wide" style="text-shadow:0 1px 2px rgba(0,0,0,.2)">Calendário com IA</span>
+        <div class="check-reveal card-organic tone-tan inline-flex items-center gap-2.5 rounded-full pl-4 pr-5 py-3" style="transition-delay:0.20s">
+          <span class="check-reveal-icon icon-organic material-symbols-outlined text-white text-xl" style="border-radius:9999px;padding:2px;">check_circle</span>
+          <span class="card-organic-label text-white font-bold text-[15px] tracking-wide" style="text-shadow:0 1px 2px rgba(0,0,0,.25)">Calendário com IA</span>
         </div>
-        <div class="check-reveal pill-3d-soft pill-3d-soft-green inline-flex items-center gap-2.5 rounded-full pl-4 pr-5 py-3" style="transition-delay:0.30s">
-          <span class="check-reveal-icon pill-3d-icon material-symbols-outlined text-white text-xl">check_circle</span>
-          <span class="pill-3d-icon text-white font-bold text-[15px] tracking-wide" style="text-shadow:0 1px 2px rgba(0,0,0,.2)">Dados reais</span>
+        <div class="check-reveal card-organic tone-sage inline-flex items-center gap-2.5 rounded-full pl-4 pr-5 py-3" style="transition-delay:0.30s">
+          <span class="check-reveal-icon icon-organic material-symbols-outlined text-white text-xl" style="border-radius:9999px;padding:2px;">check_circle</span>
+          <span class="card-organic-label text-white font-bold text-[15px] tracking-wide" style="text-shadow:0 1px 2px rgba(0,0,0,.25)">Dados reais</span>
         </div>
-        <div class="check-reveal pill-3d-soft pill-3d-soft-green inline-flex items-center gap-2.5 rounded-full pl-4 pr-5 py-3" style="transition-delay:0.40s">
-          <span class="check-reveal-icon pill-3d-icon material-symbols-outlined text-white text-xl">check_circle</span>
-          <span class="pill-3d-icon text-white font-bold text-[15px] tracking-wide" style="text-shadow:0 1px 2px rgba(0,0,0,.2)">Safras</span>
+        <div class="check-reveal card-organic tone-terracotta inline-flex items-center gap-2.5 rounded-full pl-4 pr-5 py-3" style="transition-delay:0.40s">
+          <span class="check-reveal-icon icon-organic material-symbols-outlined text-white text-xl" style="border-radius:9999px;padding:2px;">check_circle</span>
+          <span class="card-organic-label text-white font-bold text-[15px] tracking-wide" style="text-shadow:0 1px 2px rgba(0,0,0,.25)">Safras</span>
         </div>
-        <div class="check-reveal pill-3d-soft pill-3d-soft-green inline-flex items-center gap-2.5 rounded-full pl-4 pr-5 py-3" style="transition-delay:0.50s">
-          <span class="check-reveal-icon pill-3d-icon material-symbols-outlined text-white text-xl">check_circle</span>
-          <span class="pill-3d-icon text-white font-bold text-[15px] tracking-wide" style="text-shadow:0 1px 2px rgba(0,0,0,.2)">Custos de operação</span>
+        <div class="check-reveal card-organic tone-tan inline-flex items-center gap-2.5 rounded-full pl-4 pr-5 py-3" style="transition-delay:0.50s">
+          <span class="check-reveal-icon icon-organic material-symbols-outlined text-white text-xl" style="border-radius:9999px;padding:2px;">check_circle</span>
+          <span class="card-organic-label text-white font-bold text-[15px] tracking-wide" style="text-shadow:0 1px 2px rgba(0,0,0,.25)">Custos de operação</span>
         </div>
-        <div class="check-reveal pill-3d-soft pill-3d-soft-green inline-flex items-center gap-2.5 rounded-full pl-4 pr-5 py-3" style="transition-delay:0.60s">
-          <span class="check-reveal-icon pill-3d-icon material-symbols-outlined text-white text-xl">check_circle</span>
-          <span class="pill-3d-icon text-white font-bold text-[15px] tracking-wide" style="text-shadow:0 1px 2px rgba(0,0,0,.2)">IA Especialista pessoal</span>
+        <div class="check-reveal card-organic tone-sage inline-flex items-center gap-2.5 rounded-full pl-4 pr-5 py-3" style="transition-delay:0.60s">
+          <span class="check-reveal-icon icon-organic material-symbols-outlined text-white text-xl" style="border-radius:9999px;padding:2px;">check_circle</span>
+          <span class="card-organic-label text-white font-bold text-[15px] tracking-wide" style="text-shadow:0 1px 2px rgba(0,0,0,.25)">IA Especialista pessoal</span>
         </div>
       </div>
       <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start hero-anim" style="animation-delay:.4s">
@@ -570,60 +594,61 @@ tailwind.config = {
       <h2 class="rv rv-right font-display-lg text-4xl md:text-5xl text-deep-earth mb-6 font-bold" style="transition-delay:.08s">Culturas mais lucrativas <span class="text-secondary">na sua região</span></h2>
       <p class="rv rv-right text-body-lg text-on-surface-variant mb-10 leading-relaxed" style="transition-delay:.16s">Escolha sua região e o Easyfarm já mostra quais culturas rendem mais por lá. Com números reais de mercado, não achismo. Cada simulação cruza:</p>
       <div class="check-reveal-group grid grid-cols-2 gap-3 sm:gap-4">
-          <div class="check-reveal check-card flex flex-col items-center text-center gap-2 bg-deep-earth rounded-2xl px-3 py-6" style="transition-delay:0.00s">
-            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-sprout-green/15 flex items-center justify-center mb-1 pill-3d">
-              <span class="material-symbols-outlined text-sprout-green text-2xl">storefront</span>
+          <div class="check-reveal card-organic tone-sage flex flex-col items-center text-center gap-2 px-3 py-6" style="transition-delay:0.00s">
+            <div class="check-card-icon-wrap icon-organic w-12 h-12 rounded-full flex items-center justify-center mb-1">
+              <span class="material-symbols-outlined text-white text-2xl">storefront</span>
             </div>
-            <span class="text-white text-sm font-bold leading-snug tracking-tight">Preço de venda no atacado</span>
+            <span class="card-organic-label text-white text-sm font-bold leading-snug tracking-tight" style="text-shadow:0 1px 3px rgba(0,0,0,.25)">Preço de venda no atacado</span>
           </div>
-          <div class="check-reveal check-card flex flex-col items-center text-center gap-2 bg-[#FFF4D6] rounded-2xl px-3 py-6" style="transition-delay:0.08s">
-            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-white/70 flex items-center justify-center mb-1 pill-3d">
-              <span class="material-symbols-outlined text-[#B38800] text-2xl">local_shipping</span>
+          <div class="check-reveal card-organic tone-terracotta flex flex-col items-center text-center gap-2 px-3 py-6" style="transition-delay:0.08s">
+            <div class="check-card-icon-wrap icon-organic w-12 h-12 rounded-full flex items-center justify-center mb-1">
+              <span class="material-symbols-outlined text-white text-2xl">local_shipping</span>
             </div>
-            <span class="text-deep-earth text-sm font-bold leading-snug tracking-tight">Preço de venda no varejo</span>
+            <span class="card-organic-label text-white text-sm font-bold leading-snug tracking-tight" style="text-shadow:0 1px 3px rgba(0,0,0,.25)">Preço de venda no varejo</span>
           </div>
-          <div class="check-reveal check-card flex flex-col items-center text-center gap-2 bg-harvest-gold rounded-2xl px-3 py-6" style="transition-delay:0.16s">
-            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-white/30 flex items-center justify-center mb-1 pill-3d">
+          <div class="check-reveal card-organic tone-tan flex flex-col items-center text-center gap-2 px-3 py-6" style="transition-delay:0.16s">
+            <div class="check-card-icon-wrap icon-organic w-12 h-12 rounded-full flex items-center justify-center mb-1">
               <span class="material-symbols-outlined text-white text-2xl">agriculture</span>
             </div>
-            <span class="text-deep-earth text-sm font-bold leading-snug tracking-tight">Custo com manejo</span>
+            <span class="card-organic-label text-white text-sm font-bold leading-snug tracking-tight" style="text-shadow:0 1px 3px rgba(0,0,0,.25)">Custo com manejo</span>
           </div>
-          <div class="check-reveal check-card flex flex-col items-center text-center gap-2 bg-sprout-green rounded-2xl px-3 py-6" style="transition-delay:0.24s">
-            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-deep-earth/10 flex items-center justify-center mb-1 pill-3d">
-              <span class="material-symbols-outlined text-deep-earth text-2xl">grass</span>
+          <div class="check-reveal card-organic tone-sage flex flex-col items-center text-center gap-2 px-3 py-6" style="transition-delay:0.24s">
+            <div class="check-card-icon-wrap icon-organic w-12 h-12 rounded-full flex items-center justify-center mb-1">
+              <span class="material-symbols-outlined text-white text-2xl">grass</span>
             </div>
-            <span class="text-deep-earth text-sm font-bold leading-snug tracking-tight">Custo com sementes</span>
+            <span class="card-organic-label text-white text-sm font-bold leading-snug tracking-tight" style="text-shadow:0 1px 3px rgba(0,0,0,.25)">Custo com sementes</span>
           </div>
-          <div class="check-reveal check-card flex flex-col items-center text-center gap-2 bg-deep-earth rounded-2xl px-3 py-6" style="transition-delay:0.32s">
-            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-sprout-green/15 flex items-center justify-center mb-1 pill-3d">
-              <span class="material-symbols-outlined text-sprout-green text-2xl">engineering</span>
+          <div class="check-reveal card-organic tone-terracotta flex flex-col items-center text-center gap-2 px-3 py-6" style="transition-delay:0.32s">
+            <div class="check-card-icon-wrap icon-organic w-12 h-12 rounded-full flex items-center justify-center mb-1">
+              <span class="material-symbols-outlined text-white text-2xl">engineering</span>
             </div>
-            <span class="text-white text-sm font-bold leading-snug tracking-tight">Custo de mão de obra</span>
+            <span class="card-organic-label text-white text-sm font-bold leading-snug tracking-tight" style="text-shadow:0 1px 3px rgba(0,0,0,.25)">Custo de mão de obra</span>
           </div>
-          <div class="check-reveal check-card flex flex-col items-center text-center gap-2 bg-[#FFF4D6] rounded-2xl px-3 py-6" style="transition-delay:0.40s">
-            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-white/70 flex items-center justify-center mb-1 pill-3d">
-              <span class="material-symbols-outlined text-[#B38800] text-2xl">payments</span>
+          <div class="check-reveal card-organic tone-tan flex flex-col items-center text-center gap-2 px-3 py-6" style="transition-delay:0.40s">
+            <div class="check-card-icon-wrap icon-organic w-12 h-12 rounded-full flex items-center justify-center mb-1">
+              <span class="material-symbols-outlined text-white text-2xl">payments</span>
             </div>
-            <span class="text-deep-earth text-sm font-bold leading-snug tracking-tight">Custo com insumos</span>
+            <span class="card-organic-label text-white text-sm font-bold leading-snug tracking-tight" style="text-shadow:0 1px 3px rgba(0,0,0,.25)">Custo com insumos</span>
           </div>
-          <div class="check-reveal check-card flex flex-col items-center text-center gap-2 bg-harvest-gold rounded-2xl px-3 py-6" style="transition-delay:0.48s">
-            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-white/30 flex items-center justify-center mb-1 pill-3d">
+          <div class="check-reveal card-organic tone-sage flex flex-col items-center text-center gap-2 px-3 py-6" style="transition-delay:0.48s">
+            <div class="check-card-icon-wrap icon-organic w-12 h-12 rounded-full flex items-center justify-center mb-1">
               <span class="material-symbols-outlined text-white text-2xl">trending_up</span>
             </div>
-            <span class="text-deep-earth text-sm font-bold leading-snug tracking-tight">Demanda por região</span>
+            <span class="card-organic-label text-white text-sm font-bold leading-snug tracking-tight" style="text-shadow:0 1px 3px rgba(0,0,0,.25)">Demanda por região</span>
           </div>
-          <div class="check-reveal check-card flex flex-col items-center text-center gap-2 bg-sprout-green rounded-2xl px-3 py-6" style="transition-delay:0.56s">
-            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-deep-earth/10 flex items-center justify-center mb-1 pill-3d">
-              <span class="material-symbols-outlined text-deep-earth text-2xl">cloud</span>
+          <div class="check-reveal card-organic tone-terracotta flex flex-col items-center text-center gap-2 px-3 py-6" style="transition-delay:0.56s">
+            <div class="check-card-icon-wrap icon-organic w-12 h-12 rounded-full flex items-center justify-center mb-1">
+              <span class="material-symbols-outlined text-white text-2xl">cloud</span>
             </div>
-            <span class="text-deep-earth text-sm font-bold leading-snug tracking-tight">Clima da sua área</span>
+            <span class="card-organic-label text-white text-sm font-bold leading-snug tracking-tight" style="text-shadow:0 1px 3px rgba(0,0,0,.25)">Clima da sua área</span>
           </div>
-          <div class="check-reveal check-card flex flex-col items-center text-center gap-2 bg-deep-earth rounded-2xl px-3 py-6" style="transition-delay:0.64s">
-            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-sprout-green/15 flex items-center justify-center mb-1 pill-3d">
-              <span class="material-symbols-outlined text-sprout-green text-2xl">auto_awesome</span>
+          <div class="check-reveal card-organic tone-tan flex flex-col items-center text-center gap-2 px-3 py-6" style="transition-delay:0.64s">
+            <div class="check-card-icon-wrap icon-organic w-12 h-12 rounded-full flex items-center justify-center mb-1">
+              <span class="material-symbols-outlined text-white text-2xl">auto_awesome</span>
             </div>
-            <span class="text-white text-sm font-bold leading-snug tracking-tight">E muito mais</span>
+            <span class="card-organic-label text-white text-sm font-bold leading-snug tracking-tight" style="text-shadow:0 1px 3px rgba(0,0,0,.25)">E muito mais</span>
           </div>
+        
         
         
       </div>
