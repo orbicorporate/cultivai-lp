@@ -61,6 +61,8 @@ tailwind.config = {
 /* glass price cards (adicionado) */
 .glass-price-card{ background:rgba(255,255,255,.06); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,.14); box-shadow:0 8px 32px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.06); transition:transform .35s cubic-bezier(.34,1.1,.64,1), box-shadow .35s ease, border-color .35s ease; }
 .glass-price-card:hover{ transform:translateY(-6px); border-color:rgba(74,222,128,.4); box-shadow:0 16px 40px rgba(0,0,0,.35), 0 0 30px rgba(74,222,128,.15); }
+.glass-price-card-light{ background:rgba(255,255,255,.9); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,.95); box-shadow:0 4px 10px rgba(11,45,31,.06), 0 18px 36px -8px rgba(11,45,31,.18); transition:transform .35s cubic-bezier(.34,1.1,.64,1), box-shadow .35s ease, border-color .35s ease; }
+.glass-price-card-light:hover{ transform:translateY(-6px); border-color:rgba(74,222,128,.5); box-shadow:0 6px 14px rgba(11,45,31,.08), 0 26px 46px -8px rgba(11,45,31,.24), 0 0 30px rgba(74,222,128,.15); }
 .glass-price-card-highlight{ background:linear-gradient(160deg, rgba(74,222,128,.14), rgba(11,45,31,.92) 55%); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:2px solid rgba(74,222,128,.35); box-shadow:0 20px 50px rgba(0,0,0,.4), 0 0 60px rgba(74,222,128,.12); transition:transform .35s cubic-bezier(.34,1.1,.64,1), box-shadow .35s ease; }
 .glass-price-card-highlight:hover{ box-shadow:0 24px 60px rgba(0,0,0,.45), 0 0 80px rgba(74,222,128,.22); }
 @keyframes fadeRise{ from{opacity:0; transform:translateY(22px);} to{opacity:1; transform:translateY(0);} }
@@ -196,6 +198,12 @@ tailwind.config = {
     radial-gradient(ellipse 70% 55% at 5% 60%, rgba(0,109,54,.10) 0%, transparent 60%),
     linear-gradient(185deg,#F2F7F1 0%,#E9F1E8 55%,#F5F8F3 100%);
 }
+.bg-premium{
+  background:
+    radial-gradient(ellipse 60% 45% at 12% 0%, rgba(74,222,128,.10) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 45% at 92% 20%, rgba(234,179,8,.07) 0%, transparent 58%),
+    linear-gradient(180deg,#FAF8F3 0%,#F2EEE5 100%);
+}
 
 /* --- Orbs de luz flutuantes --- */
 .orb{ position:absolute; border-radius:9999px; filter:blur(70px); pointer-events:none; }
@@ -235,16 +243,16 @@ tailwind.config = {
   box-shadow:0 18px 44px rgba(0,0,0,.36), 0 0 34px rgba(74,222,128,.20);
 }
 .glass-light{
-  background:rgba(255,255,255,.72);
+  background:rgba(255,255,255,.92);
   backdrop-filter:blur(18px) saturate(150%); -webkit-backdrop-filter:blur(18px) saturate(150%);
-  border:1px solid rgba(255,255,255,.85);
-  box-shadow:0 8px 28px rgba(11,45,31,.09), inset 0 1px 0 rgba(255,255,255,.9);
+  border:1px solid rgba(255,255,255,.95);
+  box-shadow:0 4px 10px rgba(11,45,31,.06), 0 18px 34px -10px rgba(11,45,31,.18), inset 0 1px 0 rgba(255,255,255,.9);
   transition:transform .4s cubic-bezier(.34,1.1,.64,1), box-shadow .4s ease, border-color .4s ease;
 }
 .glass-light:hover{
   transform:translateY(-6px);
   border-color:rgba(74,222,128,.6);
-  box-shadow:0 18px 40px rgba(11,45,31,.16), 0 0 30px rgba(74,222,128,.22);
+  box-shadow:0 6px 14px rgba(11,45,31,.1), 0 26px 46px -10px rgba(11,45,31,.26), 0 0 30px rgba(74,222,128,.18);
 }
 
 /* --- Halo de luz ao redor dos mockups --- */
@@ -298,7 +306,7 @@ tailwind.config = {
 @media(prefers-reduced-motion:reduce){ *{animation-duration:.01ms !important; transition-duration:.01ms !important;} }
 /* area scale track (adicionado) */
 .area-track{ height:10px; border-radius:9999px; position:relative; overflow:visible;
-  background:linear-gradient(90deg, rgba(255,255,255,.06), rgba(255,255,255,.12)); }
+  background:linear-gradient(90deg, rgba(11,45,31,.10), rgba(11,45,31,.16)); }
 .area-fill{ position:absolute; inset:0; width:0%; border-radius:9999px;
   background:linear-gradient(90deg,#FB923C,#F97316); box-shadow:0 0 16px rgba(249,115,22,.55);
   transition:width 3.2s cubic-bezier(.22,.61,.36,1); }
@@ -377,26 +385,26 @@ tailwind.config = {
   </div>
 </nav>
 
-<header class="relative overflow-hidden bg-forest-deep py-16 md:pt-32 md:pb-48">
+<header class="relative overflow-hidden bg-premium py-16 md:pt-32 md:pb-48">
   <div class="orb orb-green orb-drift w-[520px] h-[520px] -top-48 -left-32"></div>
   <div class="orb orb-emerald orb-drift-slow w-[460px] h-[460px] top-1/4 -right-32"></div>
   <div class="orb orb-gold orb-drift w-[380px] h-[380px] -bottom-40 left-1/3 opacity-70"></div>
-  <span class="material-symbols-outlined forest-glyph forest-glyph-dark leaf-float" style="font-size:340px; top:-70px; left:-90px;">forest</span>
-  <span class="material-symbols-outlined forest-glyph forest-glyph-dark leaf-float-alt" style="font-size:280px; bottom:-60px; right:-60px;">potted_plant</span>
+  <span class="material-symbols-outlined forest-glyph forest-glyph-light leaf-float" style="font-size:340px; top:-70px; left:-90px;">forest</span>
+  <span class="material-symbols-outlined forest-glyph forest-glyph-light leaf-float-alt" style="font-size:280px; bottom:-60px; right:-60px;">potted_plant</span>
   <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter grid lg:grid-cols-2 gap-16 items-center relative z-10">
     <div class="text-center lg:text-left">
-      <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass-dark text-sprout-green text-xs font-bold uppercase tracking-widest mb-8 hero-anim" style="animation-delay:.05s">
+      <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass-light text-secondary text-xs font-bold uppercase tracking-widest mb-8 hero-anim" style="animation-delay:.05s">
         <span class="relative flex h-2 w-2">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sprout-green opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2 w-2 bg-sprout-green"></span>
         </span>
         O sonho de todo produtor chegou
       </div>
-      <h1 class="font-display-lg text-4xl md:text-6xl text-white mb-8 leading-[1.1] font-extrabold hero-anim" style="animation-delay:.15s">
+      <h1 class="font-display-lg text-4xl md:text-6xl text-deep-earth mb-8 leading-[1.1] font-extrabold hero-anim" style="animation-delay:.15s">
         A IA do agro que ajuda você a plantar certo, produzir mais e <span class="text-forest-gradient">lucrar melhor</span>.
       </h1>
-      <p class="font-body-lg text-lg md:text-xl text-primary-fixed/70 mb-6 max-w-xl mx-auto lg:mx-0 leading-relaxed hero-anim" style="animation-delay:.28s">
-        <span class="text-white font-bold">Quer produzir certo e lucrar mais com o seu pedaço de terra?</span> Saiba o que exatamente plantar na sua região para ter maior margem.
+      <p class="font-body-lg text-lg md:text-xl text-on-surface-variant mb-6 max-w-xl mx-auto lg:mx-0 leading-relaxed hero-anim" style="animation-delay:.28s">
+        <span class="text-deep-earth font-bold">Quer produzir certo e lucrar mais com o seu pedaço de terra?</span> Saiba o que exatamente plantar na sua região para ter maior margem.
       </p>
       <div class="check-reveal-group hero-pill-group flex flex-wrap gap-3 justify-center lg:justify-start mb-10">
         <div class="check-reveal card-organic tone-sage inline-flex items-center gap-2.5 rounded-full pl-4 pr-5 py-3" style="transition-delay:0.00s">
@@ -432,11 +440,11 @@ tailwind.config = {
         <a href="https://easyfarm-nine.vercel.app" target="_blank" rel="noopener" class="btn-sheen pill-3d bg-sprout-green text-deep-earth px-10 py-5 rounded-full font-bold text-lg transition-all text-center cta-glow">Começar Grátis</a>
       </div>
       <div class="mt-12 flex items-center justify-center lg:justify-start gap-8 opacity-70 hover:opacity-100 transition-all hero-anim" style="animation-delay:.5s">
-        <div class="flex flex-col items-center lg:items-start"><span class="text-white font-bold text-lg leading-tight">117 culturas no catálogo</span></div>
-        <div class="h-8 w-px bg-white/10"></div>
+        <div class="flex flex-col items-center lg:items-start"><span class="text-deep-earth font-bold text-lg leading-tight">117 culturas no catálogo</span></div>
+        <div class="h-8 w-px bg-deep-earth/15"></div>
         <div class="flex flex-col items-center lg:items-start">
-          <span class="text-white font-bold text-2xl text-mono tracking-tighter">5</span>
-          <span class="text-primary-fixed/50 text-xs uppercase font-bold tracking-widest">Regiões do Brasil</span>
+          <span class="text-deep-earth font-bold text-2xl text-mono tracking-tighter">5</span>
+          <span class="text-on-surface-variant text-xs uppercase font-bold tracking-widest">Regiões do Brasil</span>
         </div>
       </div>
     </div>
@@ -476,15 +484,15 @@ tailwind.config = {
   <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[100px] translate-x-1/4 translate-y-1/4 pointer-events-none"></div>
 </header>
 
-<section class="py-24 bg-forest-deep relative overflow-hidden">
+<section class="py-24 bg-premium relative overflow-hidden">
   <div class="orb orb-green orb-parallax orb-drift w-[420px] h-[420px] -top-40 -left-24"></div>
   <div class="orb orb-gold orb-parallax orb-drift-slow w-[360px] h-[360px] -bottom-32 -right-20"></div>
-  <span class="material-symbols-outlined forest-glyph forest-glyph-dark leaf-float" style="font-size:280px; top:-40px; left:-60px;">forest</span>
-  <span class="material-symbols-outlined forest-glyph forest-glyph-dark leaf-float-alt" style="font-size:240px; bottom:-50px; right:-40px;">potted_plant</span>
+  <span class="material-symbols-outlined forest-glyph forest-glyph-light leaf-float" style="font-size:280px; top:-40px; left:-60px;">forest</span>
+  <span class="material-symbols-outlined forest-glyph forest-glyph-light leaf-float-alt" style="font-size:240px; bottom:-50px; right:-40px;">potted_plant</span>
   <div class="max-w-4xl mx-auto px-margin-mobile md:px-gutter text-center relative z-10">
-    <h2 class="rv rv-up font-display-lg text-3xl md:text-5xl text-white font-bold mb-4 leading-tight">De um espaço no quintal até <span class="text-forest-gradient">grandes fazendas</span></h2>
-    <p class="rv rv-up text-primary-fixed/75 text-lg mb-16 max-w-2xl mx-auto" style="transition-delay:.1s">Planeje e calcule áreas entre <span class="text-white font-bold">50 m²</span> e <span class="text-white font-bold">2.000.000 m²</span>. A calculadora se ajusta ao tamanho do seu projeto, seja qual for.</p>
-    <div class="rv rv-scale relative max-w-2xl mx-auto" style="transition-delay:.18s">
+    <h2 class="rv rv-up font-display-lg text-3xl md:text-5xl text-deep-earth font-bold mb-4 leading-tight">De um espaço no quintal até <span class="text-secondary">grandes fazendas</span></h2>
+    <p class="rv rv-up text-on-surface-variant text-lg mb-16 max-w-2xl mx-auto" style="transition-delay:.1s">Planeje e calcule áreas entre <span class="text-deep-earth font-bold">50 m²</span> e <span class="text-deep-earth font-bold">2.000.000 m²</span>. A calculadora se ajusta ao tamanho do seu projeto, seja qual for.</p>
+    <div class="rv rv-scale relative max-w-2xl mx-auto glass-light rounded-[2rem] p-8" style="transition-delay:.18s">
       <div class="area-track">
         <div class="area-fill"></div>
         <span class="area-dot" style="left:0"></span>
@@ -492,21 +500,21 @@ tailwind.config = {
       </div>
       <div class="flex justify-between items-start mt-8">
         <div class="text-left flex flex-col items-start">
-          <span class="material-symbols-outlined text-sprout-green text-3xl mb-3">yard</span>
-          <span class="text-white font-bold text-lg" style="font-family:Arial,Helvetica,sans-serif;">50 m²</span>
-          <span class="text-primary-fixed/50 text-xs uppercase tracking-widest font-bold mt-1">Espaço no quintal</span>
+          <span class="material-symbols-outlined text-secondary text-3xl mb-3">yard</span>
+          <span class="text-deep-earth font-bold text-lg" style="font-family:Arial,Helvetica,sans-serif;">50 m²</span>
+          <span class="text-on-surface-variant text-xs uppercase tracking-widest font-bold mt-1">Espaço no quintal</span>
         </div>
         <div class="text-right flex flex-col items-end">
-          <span class="material-symbols-outlined text-sprout-green text-3xl mb-3">agriculture</span>
-          <span class="text-white font-bold text-lg" style="font-family:Arial,Helvetica,sans-serif;">2.000.000 m²</span>
-          <span class="text-primary-fixed/50 text-xs uppercase tracking-widest font-bold mt-1">Grandes fazendas</span>
+          <span class="material-symbols-outlined text-secondary text-3xl mb-3">agriculture</span>
+          <span class="text-deep-earth font-bold text-lg" style="font-family:Arial,Helvetica,sans-serif;">2.000.000 m²</span>
+          <span class="text-on-surface-variant text-xs uppercase tracking-widest font-bold mt-1">Grandes fazendas</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="py-24 bg-forest-light relative overflow-hidden">
+<section class="py-24 bg-premium relative overflow-hidden">
   <div class="orb orb-green orb-parallax orb-drift w-[380px] h-[380px] -top-32 -right-24 opacity-70"></div>
   <div class="orb orb-emerald orb-parallax orb-drift-slow w-[300px] h-[300px] -bottom-24 -left-20 opacity-60"></div>
   <span class="material-symbols-outlined forest-glyph forest-glyph-light leaf-float" style="font-size:250px; top:20px; right:-50px;">eco</span>
@@ -543,7 +551,7 @@ tailwind.config = {
   </div>
 </section>
 
-<section class="py-24 bg-forest-mist relative overflow-hidden" id="regional">
+<section class="py-24 bg-premium relative overflow-hidden" id="regional">
   <div class="orb orb-green orb-parallax orb-drift w-[400px] h-[400px] top-10 -left-32 opacity-70"></div>
   <div class="orb orb-gold orb-parallax orb-drift-slow w-[320px] h-[320px] -bottom-24 right-0 opacity-60"></div>
   <span class="material-symbols-outlined forest-glyph forest-glyph-light leaf-float-alt" style="font-size:270px; bottom:-40px; left:-40px;">park</span>
@@ -656,7 +664,7 @@ tailwind.config = {
   </div>
 </section>
 
-<section class="py-24 bg-forest-light relative overflow-hidden">
+<section class="py-24 bg-premium relative overflow-hidden">
   <div class="orb orb-emerald orb-parallax orb-drift w-[420px] h-[420px] -top-36 left-1/4 opacity-60"></div>
   <div class="orb orb-gold orb-parallax orb-drift-slow w-[300px] h-[300px] bottom-0 -left-24 opacity-55"></div>
   <span class="material-symbols-outlined forest-glyph forest-glyph-light leaf-float" style="font-size:260px; top:-30px; right:-60px;">grass</span>
@@ -742,10 +750,10 @@ tailwind.config = {
   </div>
 </section>
 
-<section class="py-24 bg-forest-deep relative overflow-hidden" id="specialist">
+<section class="py-24 bg-premium relative overflow-hidden" id="specialist">
   <div class="orb orb-green orb-parallax orb-drift w-[440px] h-[440px] -top-32 left-1/3"></div>
   <div class="orb orb-emerald orb-parallax orb-drift-slow w-[360px] h-[360px] bottom-0 -right-24"></div>
-  <span class="material-symbols-outlined forest-glyph forest-glyph-dark leaf-float" style="font-size:300px; top:-60px; right:-70px;">forest</span>
+  <span class="material-symbols-outlined forest-glyph forest-glyph-light leaf-float" style="font-size:300px; top:-60px; right:-70px;">forest</span>
   <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter grid lg:grid-cols-2 items-center gap-20 relative z-10">
     <div class="rv rv-left order-2 lg:order-1 relative">
       <div class="relative z-20 mockup-3d rotate-y-25 max-w-[300px] mx-auto lg:mx-0 halo-glow">
@@ -768,16 +776,16 @@ tailwind.config = {
     </div>
     <div class="order-1 lg:order-2 text-center lg:text-left">
       <span class="rv rv-right text-sprout-green font-bold text-sm tracking-widest uppercase mb-4 block">Recurso Pro</span>
-      <h2 class="rv rv-right font-display-lg text-4xl md:text-5xl text-white mb-6 font-bold" style="transition-delay:.08s">Análise Instantânea: <span class="shimmer-text">Easy</span></h2>
-      <p class="rv rv-right text-body-lg text-primary-fixed/75 mb-10 leading-relaxed" style="transition-delay:.16s">Viu uma folha amarelada ou uma praga desconhecida? Manda uma foto pra <strong class="text-white">Easy</strong>. A assistente avalia pragas, doenças e deficiências nutricionais em segundos, e te orienta o que fazer.</p>
+      <h2 class="rv rv-right font-display-lg text-4xl md:text-5xl text-deep-earth mb-6 font-bold" style="transition-delay:.08s">Análise Instantânea: <span class="text-secondary">Easy</span></h2>
+      <p class="rv rv-right text-body-lg text-on-surface-variant mb-10 leading-relaxed" style="transition-delay:.16s">Viu uma folha amarelada ou uma praga desconhecida? Manda uma foto pra <strong class="text-deep-earth">Easy</strong>. A assistente avalia pragas, doenças e deficiências nutricionais em segundos, e te orienta o que fazer.</p>
       <div class="space-y-4" data-stagger="0.12">
-        <div class="rv rv-right glass-dark rounded-2xl p-5 flex items-start gap-4 text-left">
+        <div class="rv rv-right glass-light rounded-2xl p-5 flex items-start gap-4 text-left">
           <div class="w-14 h-14 rounded-full pill-3d pill-3d-green flex items-center justify-center shrink-0"><span class="pill-3d-icon material-symbols-outlined text-white text-2xl">photo_camera</span></div>
-          <div><h4 class="text-white font-bold text-lg mb-1">Diagnóstico por Imagem</h4><p class="text-primary-fixed/65 text-sm leading-relaxed">Manda foto da folha, fruto ou praga e receba avaliação na hora.</p></div>
+          <div><h4 class="text-deep-earth font-bold text-lg mb-1">Diagnóstico por Imagem</h4><p class="text-on-surface-variant text-sm leading-relaxed">Manda foto da folha, fruto ou praga e receba avaliação na hora.</p></div>
         </div>
-        <div class="rv rv-right glass-dark rounded-2xl p-5 flex items-start gap-4 text-left">
+        <div class="rv rv-right glass-light rounded-2xl p-5 flex items-start gap-4 text-left">
           <div class="w-14 h-14 rounded-full pill-3d pill-3d-gold flex items-center justify-center shrink-0"><span class="pill-3d-icon material-symbols-outlined text-white text-2xl">chat</span></div>
-          <div><h4 class="text-white font-bold text-lg mb-1">Tira dúvida na hora</h4><p class="text-primary-fixed/65 text-sm leading-relaxed">Pergunte qualquer coisa sobre cultivo, sem esperar visita técnica.</p></div>
+          <div><h4 class="text-deep-earth font-bold text-lg mb-1">Tira dúvida na hora</h4><p class="text-on-surface-variant text-sm leading-relaxed">Pergunte qualquer coisa sobre cultivo, sem esperar visita técnica.</p></div>
         </div>
       </div>
     </div>
@@ -785,7 +793,7 @@ tailwind.config = {
   <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-sprout-green/5 to-transparent pointer-events-none"></div>
 </section>
 
-<section class="py-24 bg-forest-mist relative overflow-hidden">
+<section class="py-24 bg-premium relative overflow-hidden">
   <div class="orb orb-green orb-parallax orb-drift w-[380px] h-[380px] -top-28 right-1/4 opacity-70"></div>
   <div class="orb orb-emerald orb-parallax orb-drift-slow w-[320px] h-[320px] bottom-0 -left-24 opacity-55"></div>
   <span class="material-symbols-outlined forest-glyph forest-glyph-light leaf-float-alt" style="font-size:250px; top:10px; left:-50px;">eco</span>
@@ -833,17 +841,17 @@ tailwind.config = {
   </div>
 </section>
 
-<section class="py-24 bg-forest-deep relative overflow-hidden">
+<section class="py-24 bg-premium relative overflow-hidden">
   <div class="orb orb-green orb-parallax orb-drift w-[440px] h-[440px] -top-32 -right-24"></div>
   <div class="orb orb-gold orb-parallax orb-drift-slow w-[340px] h-[340px] bottom-0 left-1/4 opacity-70"></div>
-  <span class="material-symbols-outlined forest-glyph forest-glyph-dark leaf-float" style="font-size:290px; bottom:-60px; left:-60px;">park</span>
+  <span class="material-symbols-outlined forest-glyph forest-glyph-light leaf-float" style="font-size:290px; bottom:-60px; left:-60px;">park</span>
   <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter grid lg:grid-cols-2 gap-16 items-center relative z-10">
     <div class="text-center lg:text-left">
       <span class="rv rv-left text-sprout-green font-bold text-sm tracking-widest uppercase mb-4 block">Automação</span>
-      <h2 class="rv rv-left font-display-lg text-4xl md:text-5xl text-white mb-6 font-bold" style="transition-delay:.08s">Calendário Inteligente: <span class="text-forest-gradient">Nunca perca o timing</span></h2>
-      <p class="rv rv-left text-body-lg text-primary-fixed/75 mb-10 leading-relaxed" style="transition-delay:.16s">Receba avisos automáticos baseados no seu plano de produção. Saiba exatamente quando adubar, irrigar ou colher com lembretes que garantem a execução perfeita do seu planejamento.</p>
+      <h2 class="rv rv-left font-display-lg text-4xl md:text-5xl text-deep-earth mb-6 font-bold" style="transition-delay:.08s">Calendário Inteligente: <span class="text-secondary">Nunca perca o timing</span></h2>
+      <p class="rv rv-left text-body-lg text-on-surface-variant mb-10 leading-relaxed" style="transition-delay:.16s">Receba avisos automáticos baseados no seu plano de produção. Saiba exatamente quando adubar, irrigar ou colher com lembretes que garantem a execução perfeita do seu planejamento.</p>
       <div class="space-y-6">
-        <div class="rv rv-left group relative flex items-start gap-4 text-left p-5 rounded-2xl glass-dark overflow-hidden" style="transition-delay:.24s">
+        <div class="rv rv-left group relative flex items-start gap-4 text-left p-5 rounded-2xl glass-light overflow-hidden" style="transition-delay:.24s">
           <div class="absolute inset-0 bg-gradient-to-r from-transparent to-sprout-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <div class="relative w-14 h-14 rounded-2xl bg-sprout-green/10 flex items-center justify-center shrink-0 border border-sprout-green/20">
             <span class="material-symbols-outlined text-sprout-green text-2xl bell-ring">notifications_active</span>
@@ -853,8 +861,8 @@ tailwind.config = {
             </span>
           </div>
           <div class="relative">
-            <h4 class="text-white font-bold text-lg mb-1">Alertas de Manejo</h4>
-            <p class="text-primary-fixed/60 text-sm leading-relaxed">Notificações automáticas que acompanham o ciclo de cada etapa do plano.</p>
+            <h4 class="text-deep-earth font-bold text-lg mb-1">Alertas de Manejo</h4>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Notificações automáticas que acompanham o ciclo de cada etapa do plano.</p>
           </div>
         </div>
       </div>
@@ -876,7 +884,7 @@ tailwind.config = {
   <div class="absolute bottom-0 left-0 w-1/3 h-full bg-gradient-to-r from-sprout-green/5 to-transparent pointer-events-none"></div>
 </section>
 
-<section class="py-24 bg-forest-light relative overflow-hidden" id="ecosystem">
+<section class="py-24 bg-premium relative overflow-hidden" id="ecosystem">
   <div class="orb orb-emerald orb-parallax orb-drift w-[440px] h-[440px] -top-36 -left-28 opacity-60"></div>
   <div class="orb orb-gold orb-parallax orb-drift-slow w-[340px] h-[340px] bottom-10 -right-24 opacity-55"></div>
   <span class="material-symbols-outlined forest-glyph forest-glyph-light leaf-float" style="font-size:280px; top:-20px; right:-70px;">forest</span>
@@ -956,28 +964,28 @@ tailwind.config = {
       <p class="text-primary-fixed/60 text-lg">Comece de graça. Vá além quando fizer sentido.</p>
     </div>
     <div class="grid md:grid-cols-2 gap-8 mx-auto lg:grid-cols-3 max-w-container-max">
-      <div class="glass-price-card p-8 rounded-[2.5rem] flex flex-col items-start">
-        <span class="text-primary-fixed/50 font-bold text-xs mb-2 uppercase tracking-[0.2em]">Curioso</span>
-        <h3 class="text-3xl font-display-lg text-white mb-6 font-extrabold">Grátis</h3>
-        <div class="mb-6"><span class="text-4xl font-extrabold text-white">R$ 0</span></div>
+      <div class="glass-price-card-light p-8 rounded-[2.5rem] flex flex-col items-start">
+        <span class="text-on-surface-variant/70 font-bold text-xs mb-2 uppercase tracking-[0.2em]">Curioso</span>
+        <h3 class="text-3xl font-display-lg text-deep-earth mb-6 font-extrabold">Grátis</h3>
+        <div class="mb-6"><span class="text-4xl font-extrabold text-deep-earth">R$ 0</span></div>
         <ul class="space-y-4 mb-8 w-full">
-          <li class="flex items-center gap-3 text-primary-fixed/70 text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>Calculadora de lucro completa</li>
-          <li class="flex items-center gap-3 text-primary-fixed/70 text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>Guia do Produtor com ficha técnica</li>
-          <li class="flex items-center gap-3 text-primary-fixed/70 text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>1 cultura simulável por dia</li>
+          <li class="flex items-center gap-3 text-on-surface-variant text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>Calculadora de lucro completa</li>
+          <li class="flex items-center gap-3 text-on-surface-variant text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>Guia do Produtor com ficha técnica</li>
+          <li class="flex items-center gap-3 text-on-surface-variant text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>1 cultura simulável por dia</li>
         </ul>
-        <a href="https://easyfarm-nine.vercel.app" target="_blank" rel="noopener" class="w-full border-2 border-white/30 text-white py-3 rounded-full font-bold hover:bg-white hover:text-deep-earth transition-all mt-auto text-center backdrop-blur-sm">Começar agora</a>
+        <a href="https://easyfarm-nine.vercel.app" target="_blank" rel="noopener" class="w-full border-2 border-deep-earth/25 text-deep-earth py-3 rounded-full font-bold hover:bg-deep-earth hover:text-white transition-all mt-auto text-center backdrop-blur-sm">Começar agora</a>
       </div>
-      <div class="glass-price-card p-8 rounded-[2.5rem] flex flex-col items-start">
+      <div class="glass-price-card-light p-8 rounded-[2.5rem] flex flex-col items-start">
         <div class="flex items-center gap-2 mb-2">
-          <span class="text-primary-fixed/50 font-bold text-xs uppercase tracking-[0.2em]">Flexível</span>
+          <span class="text-on-surface-variant/70 font-bold text-xs uppercase tracking-[0.2em]">Flexível</span>
           <span class="pill-3d pill-3d-emerald text-white px-3 py-1 rounded-full text-[10px] font-bold"><span class="pill-3d-icon" style="text-shadow:0 1px 2px rgba(0,0,0,.3)">PLANO PRO</span></span>
         </div>
-        <h3 class="text-3xl font-display-lg text-white mb-6 font-extrabold">Mensal</h3>
+        <h3 class="text-3xl font-display-lg text-deep-earth mb-6 font-extrabold">Mensal</h3>
         <div class="mb-6">
-          <h3 class="text-4xl font-display-lg text-white font-extrabold" style="font-family:Arial,Helvetica,sans-serif;">R$ 36<span class="text-lg font-normal text-primary-fixed/50">/mês</span></h3>
-          <p class="text-primary-fixed/50 text-xs font-medium mt-1" style="font-family:Arial,Helvetica,sans-serif;">R$ 36 x 12 = R$ 432/ano</p>
+          <h3 class="text-4xl font-display-lg text-deep-earth font-extrabold" style="font-family:Arial,Helvetica,sans-serif;">R$ 36<span class="text-lg font-normal text-on-surface-variant/70">/mês</span></h3>
+          <p class="text-on-surface-variant/70 text-xs font-medium mt-1" style="font-family:Arial,Helvetica,sans-serif;">R$ 36 x 12 = R$ 432/ano</p>
         </div>
-        <ul class="space-y-4 mb-8 w-full text-primary-fixed/70">
+        <ul class="space-y-4 mb-8 w-full text-on-surface-variant">
           <li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>Culturas ilimitadas, sem limite diário</li>
           <li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>Salvar simulações ilimitadas</li>
           <li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>Plano de Produção com checklist</li>
@@ -986,7 +994,7 @@ tailwind.config = {
           <li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>Anotações por cultura, com fotos</li>
           <li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>Chat com a Easy pra tirar dúvidas</li>
         </ul>
-        <a href="https://easyfarm-nine.vercel.app" target="_blank" rel="noopener" class="w-full border-2 border-white/30 text-white py-3 rounded-full font-bold hover:bg-white hover:text-deep-earth transition-all mt-auto text-center backdrop-blur-sm">Assinar Mensal</a>
+        <a href="https://easyfarm-nine.vercel.app" target="_blank" rel="noopener" class="w-full border-2 border-deep-earth/25 text-deep-earth py-3 rounded-full font-bold hover:bg-deep-earth hover:text-white transition-all mt-auto text-center backdrop-blur-sm">Assinar Mensal</a>
       </div>
       <div class="glass-price-card-highlight p-8 rounded-[2.5rem] flex flex-col items-start relative shadow-2xl lg:scale-105 overflow-hidden">
         <div class="absolute top-5 -right-2 pill-3d pill-3d-gold text-deep-earth px-6 py-2.5 font-extrabold text-xs rounded-full animate-pulse z-10"><span class="pill-3d-icon">ECONOMIZE 30%</span></div>
@@ -1016,7 +1024,7 @@ tailwind.config = {
   </div>
 </section>
 
-<section class="py-24 bg-forest-mist relative overflow-hidden">
+<section class="py-24 bg-premium relative overflow-hidden">
   <div class="orb orb-green orb-parallax orb-drift w-[340px] h-[340px] -top-24 right-1/4 opacity-60"></div>
   <span class="material-symbols-outlined forest-glyph forest-glyph-light leaf-float-alt" style="font-size:230px; bottom:-40px; left:-40px;">eco</span>
   <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter relative z-10">
@@ -1047,7 +1055,7 @@ tailwind.config = {
   </div>
 </section>
 
-<section class="py-24 bg-forest-light relative overflow-hidden">
+<section class="py-24 bg-premium relative overflow-hidden">
   <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter relative z-10">
     <div class="rv rv-scale relative bg-forest-deep rounded-[4rem] p-12 md:p-24 text-center overflow-hidden glow-accent border border-white/10">
       <div class="orb orb-green orb-drift w-[400px] h-[400px] -top-32 -left-20 opacity-80"></div>
