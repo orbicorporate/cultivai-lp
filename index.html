@@ -95,6 +95,37 @@ tailwind.config = {
 
 
 /* ============ SISTEMA VISUAL "FLORESTA VIVA" (adicionado) ============ */
+/* --- Botoes/tags/icones em "pilula 3D" (adicionado) --- */
+.pill-3d{
+  position:relative; isolation:isolate;
+  box-shadow:
+    inset 0 2px 1px rgba(255,255,255,.45),
+    inset 0 -7px 10px rgba(0,0,0,.20),
+    0 10px 22px -6px rgba(0,0,0,.35),
+    0 3px 6px rgba(0,0,0,.18);
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease;
+}
+.pill-3d::before{
+  content:''; position:absolute; inset:0; border-radius:inherit;
+  background:linear-gradient(160deg, rgba(255,255,255,.55) 0%, rgba(255,255,255,0) 46%);
+  pointer-events:none;
+}
+.pill-3d:hover{
+  transform:translateY(-4px) scale(1.05);
+  box-shadow:
+    inset 0 2px 1px rgba(255,255,255,.5),
+    inset 0 -7px 10px rgba(0,0,0,.18),
+    0 18px 32px -6px rgba(0,0,0,.4),
+    0 4px 10px rgba(0,0,0,.22);
+}
+.pill-3d:active{ transform:translateY(-1px) scale(.97); }
+.pill-3d-green{ background:linear-gradient(180deg,#8CF3B0 0%,#34D17A 48%,#189352 100%); }
+.pill-3d-gold{ background:linear-gradient(180deg,#FDE68A 0%,#EAB308 48%,#9A7000 100%); }
+.pill-3d-emerald{ background:linear-gradient(180deg,#4ADE80 0%,#0F8A4C 55%,#0B2D1F 100%); }
+.pill-3d-dark{ background:linear-gradient(180deg,#2A6B4C 0%,#123D2A 55%,#0B2D1F 100%); }
+.pill-3d-icon{ position:relative; z-index:1; }
+
+
 
 /* --- Fundos com degradê orgânico --- */
 .bg-forest-deep{
@@ -320,37 +351,37 @@ tailwind.config = {
         <span class="text-white font-bold">Quer produzir certo e lucrar mais com o seu pedaço de terra?</span> Saiba o que exatamente plantar na sua região para ter maior margem.
       </p>
       <div class="check-reveal-group hero-pill-group flex flex-wrap gap-3 justify-center lg:justify-start mb-10">
-        <div class="check-reveal inline-flex items-center gap-2 glass-dark rounded-full pl-2.5 pr-4 py-2" style="transition-delay:0.00s">
-          <span class="check-reveal-icon material-symbols-outlined text-sprout-green text-lg">check_circle</span>
-          <span class="text-white font-bold text-sm tracking-wide">Cálculo inteligente</span>
+        <div class="check-reveal pill-3d pill-3d-green inline-flex items-center gap-2 rounded-full pl-3 pr-4 py-2.5" style="transition-delay:0.00s">
+          <span class="check-reveal-icon pill-3d-icon material-symbols-outlined text-white text-lg">check_circle</span>
+          <span class="pill-3d-icon text-white font-bold text-sm tracking-wide" style="text-shadow:0 1px 2px rgba(0,0,0,.25)">Cálculo inteligente</span>
         </div>
-        <div class="check-reveal inline-flex items-center gap-2 glass-dark rounded-full pl-2.5 pr-4 py-2" style="transition-delay:0.10s">
-          <span class="check-reveal-icon material-symbols-outlined text-sprout-green text-lg">check_circle</span>
-          <span class="text-white font-bold text-sm tracking-wide">Planejamento</span>
+        <div class="check-reveal pill-3d pill-3d-green inline-flex items-center gap-2 rounded-full pl-3 pr-4 py-2.5" style="transition-delay:0.10s">
+          <span class="check-reveal-icon pill-3d-icon material-symbols-outlined text-white text-lg">check_circle</span>
+          <span class="pill-3d-icon text-white font-bold text-sm tracking-wide" style="text-shadow:0 1px 2px rgba(0,0,0,.25)">Planejamento</span>
         </div>
-        <div class="check-reveal inline-flex items-center gap-2 glass-dark rounded-full pl-2.5 pr-4 py-2" style="transition-delay:0.20s">
-          <span class="check-reveal-icon material-symbols-outlined text-sprout-green text-lg">check_circle</span>
-          <span class="text-white font-bold text-sm tracking-wide">Calendário com IA</span>
+        <div class="check-reveal pill-3d pill-3d-green inline-flex items-center gap-2 rounded-full pl-3 pr-4 py-2.5" style="transition-delay:0.20s">
+          <span class="check-reveal-icon pill-3d-icon material-symbols-outlined text-white text-lg">check_circle</span>
+          <span class="pill-3d-icon text-white font-bold text-sm tracking-wide" style="text-shadow:0 1px 2px rgba(0,0,0,.25)">Calendário com IA</span>
         </div>
-        <div class="check-reveal inline-flex items-center gap-2 glass-dark rounded-full pl-2.5 pr-4 py-2" style="transition-delay:0.30s">
-          <span class="check-reveal-icon material-symbols-outlined text-sprout-green text-lg">check_circle</span>
-          <span class="text-white font-bold text-sm tracking-wide">Dados reais</span>
+        <div class="check-reveal pill-3d pill-3d-green inline-flex items-center gap-2 rounded-full pl-3 pr-4 py-2.5" style="transition-delay:0.30s">
+          <span class="check-reveal-icon pill-3d-icon material-symbols-outlined text-white text-lg">check_circle</span>
+          <span class="pill-3d-icon text-white font-bold text-sm tracking-wide" style="text-shadow:0 1px 2px rgba(0,0,0,.25)">Dados reais</span>
         </div>
-        <div class="check-reveal inline-flex items-center gap-2 glass-dark rounded-full pl-2.5 pr-4 py-2" style="transition-delay:0.40s">
-          <span class="check-reveal-icon material-symbols-outlined text-sprout-green text-lg">check_circle</span>
-          <span class="text-white font-bold text-sm tracking-wide">Safras</span>
+        <div class="check-reveal pill-3d pill-3d-green inline-flex items-center gap-2 rounded-full pl-3 pr-4 py-2.5" style="transition-delay:0.40s">
+          <span class="check-reveal-icon pill-3d-icon material-symbols-outlined text-white text-lg">check_circle</span>
+          <span class="pill-3d-icon text-white font-bold text-sm tracking-wide" style="text-shadow:0 1px 2px rgba(0,0,0,.25)">Safras</span>
         </div>
-        <div class="check-reveal inline-flex items-center gap-2 glass-dark rounded-full pl-2.5 pr-4 py-2" style="transition-delay:0.50s">
-          <span class="check-reveal-icon material-symbols-outlined text-sprout-green text-lg">check_circle</span>
-          <span class="text-white font-bold text-sm tracking-wide">Custos de operação</span>
+        <div class="check-reveal pill-3d pill-3d-green inline-flex items-center gap-2 rounded-full pl-3 pr-4 py-2.5" style="transition-delay:0.50s">
+          <span class="check-reveal-icon pill-3d-icon material-symbols-outlined text-white text-lg">check_circle</span>
+          <span class="pill-3d-icon text-white font-bold text-sm tracking-wide" style="text-shadow:0 1px 2px rgba(0,0,0,.25)">Custos de operação</span>
         </div>
-        <div class="check-reveal inline-flex items-center gap-2 glass-dark rounded-full pl-2.5 pr-4 py-2" style="transition-delay:0.60s">
-          <span class="check-reveal-icon material-symbols-outlined text-sprout-green text-lg">check_circle</span>
-          <span class="text-white font-bold text-sm tracking-wide">IA Especialista pessoal</span>
+        <div class="check-reveal pill-3d pill-3d-green inline-flex items-center gap-2 rounded-full pl-3 pr-4 py-2.5" style="transition-delay:0.60s">
+          <span class="check-reveal-icon pill-3d-icon material-symbols-outlined text-white text-lg">check_circle</span>
+          <span class="pill-3d-icon text-white font-bold text-sm tracking-wide" style="text-shadow:0 1px 2px rgba(0,0,0,.25)">IA Especialista pessoal</span>
         </div>
       </div>
       <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start hero-anim" style="animation-delay:.4s">
-        <a href="https://easyfarm-nine.vercel.app" target="_blank" rel="noopener" class="btn-sheen bg-sprout-green text-deep-earth px-10 py-5 rounded-full font-bold text-lg hover:scale-105 hover:shadow-2xl hover:shadow-sprout-green/30 transition-all active:scale-95 text-center cta-glow">Começar Grátis</a>
+        <a href="https://easyfarm-nine.vercel.app" target="_blank" rel="noopener" class="btn-sheen pill-3d bg-sprout-green text-deep-earth px-10 py-5 rounded-full font-bold text-lg transition-all text-center cta-glow">Começar Grátis</a>
       </div>
       <div class="mt-12 flex items-center justify-center lg:justify-start gap-8 opacity-70 hover:opacity-100 transition-all hero-anim" style="animation-delay:.5s">
         <div class="flex flex-col items-center lg:items-start"><span class="text-white font-bold text-lg leading-tight">117 culturas no catálogo</span></div>
@@ -387,7 +418,7 @@ tailwind.config = {
       </div>
       <div class="absolute bottom-16 -right-16 z-40 floating hidden lg:block max-w-[210px]" style="animation-delay:.8s">
         <div class="glass-card p-4 rounded-2xl border border-sprout-green/30 flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-sprout-green/10 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-sprout-green">smart_toy</span></div>
+          <div class="w-10 h-10 rounded-full bg-sprout-green/10 flex items-center justify-center shrink-0 pill-3d"><span class="material-symbols-outlined text-sprout-green">smart_toy</span></div>
           <span class="text-white font-bold text-sm leading-snug">Especialista Agro Pessoal com IA</span>
         </div>
       </div>
@@ -440,22 +471,22 @@ tailwind.config = {
     </p>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-stagger="0.12">
       <div class="rv rv-up glass-light rounded-3xl p-8 flex flex-col items-center text-center">
-        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-sprout-green/25 to-secondary/15 flex items-center justify-center mb-5 border border-sprout-green/25">
-          <span class="material-symbols-outlined text-3xl text-secondary">analytics</span>
+        <div class="w-16 h-16 rounded-full pill-3d pill-3d-green flex items-center justify-center mb-5">
+          <span class="pill-3d-icon material-symbols-outlined text-3xl text-white">analytics</span>
         </div>
         <h4 class="font-bold text-deep-earth text-lg mb-2">Dados Reais</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed">Chega de tabelas confusas. Visualize tudo em dashboards intuitivos.</p>
       </div>
       <div class="rv rv-up glass-light rounded-3xl p-8 flex flex-col items-center text-center">
-        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-harvest-gold/25 to-sprout-green/15 flex items-center justify-center mb-5 border border-harvest-gold/25">
-          <span class="material-symbols-outlined text-3xl text-secondary">verified_user</span>
+        <div class="w-16 h-16 rounded-full pill-3d pill-3d-gold flex items-center justify-center mb-5">
+          <span class="pill-3d-icon material-symbols-outlined text-3xl text-white">verified_user</span>
         </div>
         <h4 class="font-bold text-deep-earth text-lg mb-2">Ficha técnica real</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed">Tome decisões com base em pH, temperatura e espaçamento de cada cultura.</p>
       </div>
       <div class="rv rv-up glass-light rounded-3xl p-8 flex flex-col items-center text-center">
-        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary/25 to-sprout-green/15 flex items-center justify-center mb-5 border border-secondary/25">
-          <span class="material-symbols-outlined text-3xl text-secondary">smartphone</span>
+        <div class="w-16 h-16 rounded-full pill-3d pill-3d-emerald flex items-center justify-center mb-5">
+          <span class="pill-3d-icon material-symbols-outlined text-3xl text-white">smartphone</span>
         </div>
         <h4 class="font-bold text-deep-earth text-lg mb-2">Mobilidade</h4>
         <p class="text-sm text-on-surface-variant leading-relaxed">Leve o controle total da sua fazenda no bolso, onde quer que esteja.</p>
@@ -478,7 +509,7 @@ tailwind.config = {
       <div class="absolute bottom-32 right-9 z-30 floating-delayed hidden lg:block max-w-[220px]">
         <div class="glass-card-light p-4 rounded-2xl shadow-xl border border-secondary/20">
           <div class="flex items-center gap-3 mb-2">
-            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-secondary">place</span></div>
+            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center shrink-0 pill-3d"><span class="material-symbols-outlined text-secondary">place</span></div>
             <span class="text-deep-earth font-bold text-sm leading-snug">Todas as 5 regiões do Brasil</span>
           </div>
           <p class="text-on-surface-variant text-xs leading-relaxed">Sul, Sudeste, Centro-Oeste, Nordeste e Norte</p>
@@ -516,55 +547,55 @@ tailwind.config = {
       <p class="rv rv-right text-body-lg text-on-surface-variant mb-10 leading-relaxed" style="transition-delay:.16s">Escolha sua região e o Easyfarm já mostra quais culturas rendem mais por lá. Com números reais de mercado, não achismo. Cada simulação cruza:</p>
       <div class="check-reveal-group grid grid-cols-2 gap-3 sm:gap-4">
           <div class="check-reveal check-card flex flex-col items-center text-center gap-2 bg-deep-earth rounded-2xl px-3 py-6" style="transition-delay:0.00s">
-            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-sprout-green/15 flex items-center justify-center mb-1">
+            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-sprout-green/15 flex items-center justify-center mb-1 pill-3d">
               <span class="material-symbols-outlined text-sprout-green text-2xl">storefront</span>
             </div>
             <span class="text-white text-sm font-bold leading-snug tracking-tight">Preço de venda no atacado</span>
           </div>
           <div class="check-reveal check-card flex flex-col items-center text-center gap-2 bg-[#FFF4D6] rounded-2xl px-3 py-6" style="transition-delay:0.08s">
-            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-white/70 flex items-center justify-center mb-1">
+            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-white/70 flex items-center justify-center mb-1 pill-3d">
               <span class="material-symbols-outlined text-[#B38800] text-2xl">local_shipping</span>
             </div>
             <span class="text-deep-earth text-sm font-bold leading-snug tracking-tight">Preço de venda no varejo</span>
           </div>
           <div class="check-reveal check-card flex flex-col items-center text-center gap-2 bg-harvest-gold rounded-2xl px-3 py-6" style="transition-delay:0.16s">
-            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-white/30 flex items-center justify-center mb-1">
+            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-white/30 flex items-center justify-center mb-1 pill-3d">
               <span class="material-symbols-outlined text-white text-2xl">agriculture</span>
             </div>
             <span class="text-deep-earth text-sm font-bold leading-snug tracking-tight">Custo com manejo</span>
           </div>
           <div class="check-reveal check-card flex flex-col items-center text-center gap-2 bg-sprout-green rounded-2xl px-3 py-6" style="transition-delay:0.24s">
-            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-deep-earth/10 flex items-center justify-center mb-1">
+            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-deep-earth/10 flex items-center justify-center mb-1 pill-3d">
               <span class="material-symbols-outlined text-deep-earth text-2xl">grass</span>
             </div>
             <span class="text-deep-earth text-sm font-bold leading-snug tracking-tight">Custo com sementes</span>
           </div>
           <div class="check-reveal check-card flex flex-col items-center text-center gap-2 bg-deep-earth rounded-2xl px-3 py-6" style="transition-delay:0.32s">
-            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-sprout-green/15 flex items-center justify-center mb-1">
+            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-sprout-green/15 flex items-center justify-center mb-1 pill-3d">
               <span class="material-symbols-outlined text-sprout-green text-2xl">engineering</span>
             </div>
             <span class="text-white text-sm font-bold leading-snug tracking-tight">Custo de mão de obra</span>
           </div>
           <div class="check-reveal check-card flex flex-col items-center text-center gap-2 bg-[#FFF4D6] rounded-2xl px-3 py-6" style="transition-delay:0.40s">
-            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-white/70 flex items-center justify-center mb-1">
+            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-white/70 flex items-center justify-center mb-1 pill-3d">
               <span class="material-symbols-outlined text-[#B38800] text-2xl">payments</span>
             </div>
             <span class="text-deep-earth text-sm font-bold leading-snug tracking-tight">Custo com insumos</span>
           </div>
           <div class="check-reveal check-card flex flex-col items-center text-center gap-2 bg-harvest-gold rounded-2xl px-3 py-6" style="transition-delay:0.48s">
-            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-white/30 flex items-center justify-center mb-1">
+            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-white/30 flex items-center justify-center mb-1 pill-3d">
               <span class="material-symbols-outlined text-white text-2xl">trending_up</span>
             </div>
             <span class="text-deep-earth text-sm font-bold leading-snug tracking-tight">Demanda por região</span>
           </div>
           <div class="check-reveal check-card flex flex-col items-center text-center gap-2 bg-sprout-green rounded-2xl px-3 py-6" style="transition-delay:0.56s">
-            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-deep-earth/10 flex items-center justify-center mb-1">
+            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-deep-earth/10 flex items-center justify-center mb-1 pill-3d">
               <span class="material-symbols-outlined text-deep-earth text-2xl">cloud</span>
             </div>
             <span class="text-deep-earth text-sm font-bold leading-snug tracking-tight">Clima da sua área</span>
           </div>
           <div class="check-reveal check-card flex flex-col items-center text-center gap-2 bg-deep-earth rounded-2xl px-3 py-6" style="transition-delay:0.64s">
-            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-sprout-green/15 flex items-center justify-center mb-1">
+            <div class="check-card-icon-wrap w-12 h-12 rounded-full bg-sprout-green/15 flex items-center justify-center mb-1 pill-3d">
               <span class="material-symbols-outlined text-sprout-green text-2xl">auto_awesome</span>
             </div>
             <span class="text-white text-sm font-bold leading-snug tracking-tight">E muito mais</span>
@@ -692,11 +723,11 @@ tailwind.config = {
       <p class="rv rv-right text-body-lg text-primary-fixed/75 mb-10 leading-relaxed" style="transition-delay:.16s">Viu uma folha amarelada ou uma praga desconhecida? Manda uma foto pra <strong class="text-white">Easy</strong>. A assistente avalia pragas, doenças e deficiências nutricionais em segundos, e te orienta o que fazer.</p>
       <div class="space-y-4" data-stagger="0.12">
         <div class="rv rv-right glass-dark rounded-2xl p-5 flex items-start gap-4 text-left">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-sprout-green/25 to-secondary/15 flex items-center justify-center shrink-0 border border-sprout-green/25"><span class="material-symbols-outlined text-sprout-green text-2xl">photo_camera</span></div>
+          <div class="w-14 h-14 rounded-full pill-3d pill-3d-green flex items-center justify-center shrink-0"><span class="pill-3d-icon material-symbols-outlined text-white text-2xl">photo_camera</span></div>
           <div><h4 class="text-white font-bold text-lg mb-1">Diagnóstico por Imagem</h4><p class="text-primary-fixed/65 text-sm leading-relaxed">Manda foto da folha, fruto ou praga e receba avaliação na hora.</p></div>
         </div>
         <div class="rv rv-right glass-dark rounded-2xl p-5 flex items-start gap-4 text-left">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-harvest-gold/25 to-sprout-green/15 flex items-center justify-center shrink-0 border border-harvest-gold/25"><span class="material-symbols-outlined text-sprout-green text-2xl">chat</span></div>
+          <div class="w-14 h-14 rounded-full pill-3d pill-3d-gold flex items-center justify-center shrink-0"><span class="pill-3d-icon material-symbols-outlined text-white text-2xl">chat</span></div>
           <div><h4 class="text-white font-bold text-lg mb-1">Tira dúvida na hora</h4><p class="text-primary-fixed/65 text-sm leading-relaxed">Pergunte qualquer coisa sobre cultivo, sem esperar visita técnica.</p></div>
         </div>
       </div>
@@ -718,13 +749,13 @@ tailwind.config = {
       </div>
       <div class="absolute top-24 right-[60px] z-30 floating hidden lg:block">
         <div class="glass-card-light p-4 rounded-2xl shadow-xl border border-secondary/20 flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center"><span class="material-symbols-outlined text-secondary">photo_camera</span></div>
+          <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center pill-3d"><span class="material-symbols-outlined text-secondary">photo_camera</span></div>
           <span class="text-deep-earth font-bold text-sm">Registro Fotográfico</span>
         </div>
       </div>
       <div class="absolute bottom-12 left-[178px] z-30 floating-delayed hidden lg:block">
         <div class="glass-card-light p-4 rounded-2xl shadow-xl border border-secondary/20 flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center"><span class="material-symbols-outlined text-secondary">cloud_done</span></div>
+          <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center pill-3d"><span class="material-symbols-outlined text-secondary">cloud_done</span></div>
           <span class="text-deep-earth font-bold text-sm">Sincronizado na Nuvem</span>
         </div>
       </div>
@@ -736,7 +767,7 @@ tailwind.config = {
       <div class="space-y-6">
         <div class="rv rv-left group relative flex items-start gap-4 text-left p-5 rounded-2xl glass-light overflow-hidden" style="transition-delay:.24s">
           <div class="absolute inset-0 bg-gradient-to-r from-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div class="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-secondary/25 to-sprout-green/15 flex items-center justify-center shrink-0 border border-secondary/25">
+          <div class="relative w-14 h-14 rounded-full pill-3d pill-3d-emerald flex items-center justify-center shrink-0">
             <span class="material-symbols-outlined text-secondary text-2xl camera-flash">photo_camera</span>
             <span class="absolute -top-1 -right-1 flex h-3 w-3">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
@@ -787,7 +818,7 @@ tailwind.config = {
       </div>
       <div class="absolute top-[78px] -left-12 z-30 floating hidden lg:block">
         <div class="glass-card-light p-4 rounded-2xl shadow-xl border border-sprout-green/20 flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-sprout-green/10 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-secondary">event_available</span></div>
+          <div class="w-10 h-10 rounded-full bg-sprout-green/10 flex items-center justify-center shrink-0 pill-3d"><span class="material-symbols-outlined text-secondary">event_available</span></div>
           <span class="text-deep-earth font-bold text-sm leading-snug">Acompanhamento perfeito<br>das tarefas</span>
         </div>
       </div>
@@ -890,7 +921,7 @@ tailwind.config = {
       <div class="glass-price-card p-8 rounded-[2.5rem] flex flex-col items-start">
         <div class="flex items-center gap-2 mb-2">
           <span class="text-primary-fixed/50 font-bold text-xs uppercase tracking-[0.2em]">Flexível</span>
-          <span class="bg-white/15 text-sprout-green px-2 py-0.5 rounded text-[10px] font-bold backdrop-blur-sm">PLANO PRO</span>
+          <span class="pill-3d pill-3d-emerald text-white px-3 py-1 rounded-full text-[10px] font-bold"><span class="pill-3d-icon" style="text-shadow:0 1px 2px rgba(0,0,0,.3)">PLANO PRO</span></span>
         </div>
         <h3 class="text-3xl font-display-lg text-white mb-6 font-extrabold">Mensal</h3>
         <div class="mb-6">
@@ -909,10 +940,10 @@ tailwind.config = {
         <a href="https://easyfarm-nine.vercel.app" target="_blank" rel="noopener" class="w-full border-2 border-white/30 text-white py-3 rounded-full font-bold hover:bg-white hover:text-deep-earth transition-all mt-auto text-center backdrop-blur-sm">Assinar Mensal</a>
       </div>
       <div class="glass-price-card-highlight p-8 rounded-[2.5rem] flex flex-col items-start relative shadow-2xl lg:scale-105 overflow-hidden">
-        <div class="absolute top-0 right-0 bg-harvest-gold text-deep-earth px-8 py-3 font-extrabold text-xs rounded-bl-3xl animate-pulse shadow-lg z-10">ECONOMIZE 30%</div>
+        <div class="absolute top-5 -right-2 pill-3d pill-3d-gold text-deep-earth px-6 py-2.5 font-extrabold text-xs rounded-full animate-pulse z-10"><span class="pill-3d-icon">ECONOMIZE 30%</span></div>
         <div class="flex flex-col items-start gap-2 mb-2">
           <span class="text-sprout-green font-bold text-xs uppercase tracking-[0.2em]">Produtor Pro</span>
-          <span class="bg-sprout-green/20 text-sprout-green px-2 py-0.5 rounded text-[10px] font-bold">RECOMENDADO</span>
+          <span class="pill-3d pill-3d-green text-deep-earth px-3 py-1 rounded-full text-[10px] font-bold"><span class="pill-3d-icon">RECOMENDADO</span></span>
         </div>
         <h3 class="text-3xl font-display-lg text-white mb-2 font-extrabold">Anual</h3>
         <p class="text-white/70 text-sm font-medium mb-6">Tudo do Mensal, com <span class="text-harvest-gold font-bold">30% de desconto</span></p>
@@ -929,7 +960,7 @@ tailwind.config = {
           <li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>Anotações por cultura, com fotos</li>
           <li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>Calendário e Chat com a Easy</li>
         </ul>
-        <a href="https://easyfarm-nine.vercel.app" target="_blank" rel="noopener" class="w-full bg-sprout-green text-deep-earth py-3 rounded-full font-bold hover:brightness-110 hover:shadow-lg hover:shadow-sprout-green/20 transition-all mt-auto text-center">Assinar Agora</a>
+        <a href="https://easyfarm-nine.vercel.app" target="_blank" rel="noopener" class="w-full pill-3d bg-sprout-green text-deep-earth py-3 rounded-full font-bold transition-all mt-auto text-center">Assinar Agora</a>
         <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-sprout-green/10 rounded-full blur-3xl"></div>
       </div>
     </div>
@@ -977,7 +1008,7 @@ tailwind.config = {
         <span class="text-sprout-green font-bold text-sm tracking-widest uppercase mb-5 block">Comece hoje</span>
         <h2 class="font-display-lg text-3xl md:text-5xl text-white mb-10 font-extrabold leading-tight max-w-2xl mx-auto">Inicie agora o seu planejamento <span class="text-forest-gradient">lucrativo</span> e <span class="text-forest-gradient">inteligente</span></h2>
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
-          <a href="https://easyfarm-nine.vercel.app" target="_blank" rel="noopener" class="btn-sheen bg-sprout-green text-deep-earth px-12 py-5 rounded-full font-bold text-xl hover:scale-105 transition-all shadow-xl cta-glow">Criar Minha Conta</a>
+          <a href="https://easyfarm-nine.vercel.app" target="_blank" rel="noopener" class="btn-sheen pill-3d bg-sprout-green text-deep-earth px-12 py-5 rounded-full font-bold text-xl transition-all cta-glow">Criar Minha Conta</a>
         </div>
       </div>
       <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#4ADE80 1px, transparent 1px); background-size: 40px 40px;"></div>
@@ -1205,7 +1236,7 @@ tailwind.config = {
       <p class="text-center text-on-surface-variant text-sm hidden" id="catalogEmpty">Nenhuma cultura encontrada.</p>
     </div>
     <div class="p-6 border-t border-outline-variant/30 bg-surface-container-low text-center shrink-0">
-      <a class="bg-sprout-green text-deep-earth px-8 py-3 rounded-full font-bold text-sm hover:scale-105 transition-all inline-block cta-glow" href="https://easyfarm-nine.vercel.app" rel="noopener" target="_blank">Simular o lucro de uma cultura →</a>
+      <a class="pill-3d bg-sprout-green text-deep-earth px-8 py-3 rounded-full font-bold text-sm transition-all inline-block cta-glow" href="https://easyfarm-nine.vercel.app" rel="noopener" target="_blank">Simular o lucro de uma cultura →</a>
     </div>
   </div>
 </div>
