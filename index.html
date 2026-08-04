@@ -56,6 +56,12 @@ tailwind.config = {
 .floating{ animation:floating 3s ease-in-out infinite; }
 .floating-delayed{ animation:floating 4s ease-in-out infinite; animation-delay:1s; }
 @keyframes floating{ 0%{transform:translateY(0px);} 50%{transform:translateY(-20px);} 100%{transform:translateY(0px);} }
+
+/* glass price cards (adicionado) */
+.glass-price-card{ background:rgba(255,255,255,.06); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,.14); box-shadow:0 8px 32px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.06); transition:transform .35s cubic-bezier(.34,1.1,.64,1), box-shadow .35s ease, border-color .35s ease; }
+.glass-price-card:hover{ transform:translateY(-6px); border-color:rgba(74,222,128,.4); box-shadow:0 16px 40px rgba(0,0,0,.35), 0 0 30px rgba(74,222,128,.15); }
+.glass-price-card-highlight{ background:linear-gradient(160deg, rgba(74,222,128,.14), rgba(11,45,31,.92) 55%); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:2px solid rgba(74,222,128,.35); box-shadow:0 20px 50px rgba(0,0,0,.4), 0 0 60px rgba(74,222,128,.12); transition:transform .35s cubic-bezier(.34,1.1,.64,1), box-shadow .35s ease; }
+.glass-price-card-highlight:hover{ box-shadow:0 24px 60px rgba(0,0,0,.45), 0 0 80px rgba(74,222,128,.22); }
 @keyframes fadeRise{ from{opacity:0; transform:translateY(22px);} to{opacity:1; transform:translateY(0);} }
 .hero-anim{ animation:fadeRise .8s cubic-bezier(.16,.9,.2,1) both; }
 .text-mono{ font-family:'JetBrains Mono', monospace; }
@@ -697,46 +703,53 @@ tailwind.config = {
   </div>
 </section>
 
-<section class="py-24 bg-surface" id="prices">
-  <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter reveal">
+<section class="py-24 relative overflow-hidden" id="prices" style="background:linear-gradient(165deg,#0B2D1F 0%,#0F3A28 40%,#123D2A 62%,#0B2D1F 100%);">
+  <div class="absolute -top-24 -left-16 w-80 h-80 bg-sprout-green/15 rounded-full blur-3xl pointer-events-none floating"></div>
+  <div class="absolute top-1/3 -right-20 w-96 h-96 bg-harvest-gold/10 rounded-full blur-3xl pointer-events-none floating-delayed"></div>
+  <div class="absolute -bottom-20 left-1/4 w-72 h-72 bg-secondary/20 rounded-full blur-3xl pointer-events-none floating"></div>
+  <span class="material-symbols-outlined absolute -top-6 -left-10 text-white/[.04] pointer-events-none select-none" style="font-size:260px;">forest</span>
+  <span class="material-symbols-outlined absolute -bottom-16 -right-10 text-white/[.04] pointer-events-none select-none" style="font-size:300px;">park</span>
+
+  <div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter reveal relative z-10">
     <div class="text-center mb-16">
-      <h2 class="font-display-lg text-4xl md:text-5xl text-deep-earth font-bold mb-4">Investimento que se paga</h2>
-      <p class="text-on-surface-variant text-lg">Comece de graça. Vá além quando fizer sentido.</p>
+      <span class="text-sprout-green font-bold text-sm tracking-widest uppercase mb-4 block">Invista no seu plantio</span>
+      <h2 class="font-display-lg text-4xl md:text-5xl text-white font-bold mb-4">Investimento que se paga</h2>
+      <p class="text-primary-fixed/60 text-lg">Comece de graça. Vá além quando fizer sentido.</p>
     </div>
     <div class="grid md:grid-cols-2 gap-8 mx-auto lg:grid-cols-3 max-w-container-max">
-      <div class="bg-white p-8 rounded-[2.5rem] border border-outline-variant/50 flex flex-col items-start transition-all hover:border-secondary shadow-sm">
-        <span class="text-on-surface-variant font-bold text-xs mb-2 uppercase tracking-[0.2em]">Curioso</span>
-        <h3 class="text-3xl font-display-lg text-deep-earth mb-6 font-extrabold">Grátis</h3>
-        <div class="mb-6"><span class="text-4xl font-extrabold text-deep-earth">R$ 0</span></div>
+      <div class="glass-price-card p-8 rounded-[2.5rem] flex flex-col items-start">
+        <span class="text-primary-fixed/50 font-bold text-xs mb-2 uppercase tracking-[0.2em]">Curioso</span>
+        <h3 class="text-3xl font-display-lg text-white mb-6 font-extrabold">Grátis</h3>
+        <div class="mb-6"><span class="text-4xl font-extrabold text-white">R$ 0</span></div>
         <ul class="space-y-4 mb-8 w-full">
-          <li class="flex items-center gap-3 text-on-surface-variant text-sm font-medium"><span class="material-symbols-outlined text-secondary text-lg">check_circle</span>Calculadora de lucro completa</li>
-          <li class="flex items-center gap-3 text-on-surface-variant text-sm font-medium"><span class="material-symbols-outlined text-secondary text-lg">check_circle</span>Guia do Produtor com ficha técnica</li>
-          <li class="flex items-center gap-3 text-on-surface-variant text-sm font-medium"><span class="material-symbols-outlined text-secondary text-lg">check_circle</span>1 cultura simulável por dia</li>
+          <li class="flex items-center gap-3 text-primary-fixed/70 text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>Calculadora de lucro completa</li>
+          <li class="flex items-center gap-3 text-primary-fixed/70 text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>Guia do Produtor com ficha técnica</li>
+          <li class="flex items-center gap-3 text-primary-fixed/70 text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>1 cultura simulável por dia</li>
         </ul>
-        <a href="https://easyfarm-nine.vercel.app" target="_blank" rel="noopener" class="w-full border-2 border-deep-earth text-deep-earth py-3 rounded-full font-bold hover:bg-deep-earth hover:text-white transition-all mt-auto text-center">Começar agora</a>
+        <a href="https://easyfarm-nine.vercel.app" target="_blank" rel="noopener" class="w-full border-2 border-white/30 text-white py-3 rounded-full font-bold hover:bg-white hover:text-deep-earth transition-all mt-auto text-center backdrop-blur-sm">Começar agora</a>
       </div>
-      <div class="bg-white p-8 rounded-[2.5rem] border border-outline-variant/50 flex flex-col items-start transition-all hover:border-secondary shadow-sm">
+      <div class="glass-price-card p-8 rounded-[2.5rem] flex flex-col items-start">
         <div class="flex items-center gap-2 mb-2">
-          <span class="text-on-surface-variant font-bold text-xs uppercase tracking-[0.2em]">Flexível</span>
-          <span class="bg-deep-earth text-sprout-green px-2 py-0.5 rounded text-[10px] font-bold">PLANO PRO</span>
+          <span class="text-primary-fixed/50 font-bold text-xs uppercase tracking-[0.2em]">Flexível</span>
+          <span class="bg-white/15 text-sprout-green px-2 py-0.5 rounded text-[10px] font-bold backdrop-blur-sm">PLANO PRO</span>
         </div>
-        <h3 class="text-3xl font-display-lg text-deep-earth mb-6 font-extrabold">Mensal</h3>
+        <h3 class="text-3xl font-display-lg text-white mb-6 font-extrabold">Mensal</h3>
         <div class="mb-6">
-          <h3 class="text-4xl font-display-lg text-deep-earth font-extrabold" style="font-family:Arial,Helvetica,sans-serif;">R$ 36<span class="text-lg font-normal text-on-surface-variant/60">/mês</span></h3>
-          <p class="text-on-surface-variant/60 text-xs font-medium mt-1" style="font-family:Arial,Helvetica,sans-serif;">R$ 36 x 12 = R$ 432/ano</p>
+          <h3 class="text-4xl font-display-lg text-white font-extrabold" style="font-family:Arial,Helvetica,sans-serif;">R$ 36<span class="text-lg font-normal text-primary-fixed/50">/mês</span></h3>
+          <p class="text-primary-fixed/50 text-xs font-medium mt-1" style="font-family:Arial,Helvetica,sans-serif;">R$ 36 x 12 = R$ 432/ano</p>
         </div>
-        <ul class="space-y-4 mb-8 w-full text-on-surface-variant">
-          <li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-secondary text-lg">check_circle</span>Culturas ilimitadas, sem limite diário</li>
-          <li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-secondary text-lg">check_circle</span>Salvar simulações ilimitadas</li>
-          <li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-secondary text-lg">check_circle</span>Plano de Produção com checklist</li>
-          <li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-secondary text-lg">check_circle</span>Calendário com avisos automáticos</li>
-          <li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-secondary text-lg">check_circle</span>Histórico completo e Minha Fazenda</li>
-          <li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-secondary text-lg">check_circle</span>Anotações por cultura, com fotos</li>
-          <li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-secondary text-lg">check_circle</span>Chat com a Easy pra tirar dúvidas</li>
+        <ul class="space-y-4 mb-8 w-full text-primary-fixed/70">
+          <li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>Culturas ilimitadas, sem limite diário</li>
+          <li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>Salvar simulações ilimitadas</li>
+          <li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>Plano de Produção com checklist</li>
+          <li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>Calendário com avisos automáticos</li>
+          <li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>Histórico completo e Minha Fazenda</li>
+          <li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>Anotações por cultura, com fotos</li>
+          <li class="flex items-center gap-3 text-sm font-medium"><span class="material-symbols-outlined text-sprout-green text-lg">check_circle</span>Chat com a Easy pra tirar dúvidas</li>
         </ul>
-        <a href="https://easyfarm-nine.vercel.app" target="_blank" rel="noopener" class="w-full border-2 border-deep-earth text-deep-earth py-3 rounded-full font-bold hover:bg-deep-earth hover:text-white transition-all mt-auto text-center">Assinar Mensal</a>
+        <a href="https://easyfarm-nine.vercel.app" target="_blank" rel="noopener" class="w-full border-2 border-white/30 text-white py-3 rounded-full font-bold hover:bg-white hover:text-deep-earth transition-all mt-auto text-center backdrop-blur-sm">Assinar Mensal</a>
       </div>
-      <div class="bg-deep-earth p-8 rounded-[2.5rem] border-2 border-sprout-green/30 flex flex-col items-start relative shadow-2xl lg:scale-105 overflow-hidden glow-accent">
+      <div class="glass-price-card-highlight p-8 rounded-[2.5rem] flex flex-col items-start relative shadow-2xl lg:scale-105 overflow-hidden">
         <div class="absolute top-0 right-0 bg-harvest-gold text-deep-earth px-8 py-3 font-extrabold text-xs rounded-bl-3xl animate-pulse shadow-lg z-10">ECONOMIZE 30%</div>
         <div class="flex flex-col items-start gap-2 mb-2">
           <span class="text-sprout-green font-bold text-xs uppercase tracking-[0.2em]">Produtor Pro</span>
