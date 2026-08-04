@@ -102,10 +102,10 @@ tailwind.config = {
 
 /* seção "culturas mais lucrativas": checklist com entrada escalonada ligada ao scroll */
 .check-reveal{ opacity:0; transform:translateY(14px) scale(.96); transition:opacity .5s ease, transform .5s cubic-bezier(.34,1.2,.64,1), border-color .3s ease, box-shadow .3s ease; }
-.check-reveal-group.in-view .check-reveal{ opacity:1; transform:translateY(0) scale(1); }
-.check-reveal-group.in-view .check-reveal:hover{ border-color:rgba(74,222,128,.5); box-shadow:0 6px 18px rgba(74,222,128,.15); }
+.check-reveal-group.in-view .check-reveal{ opacity:1; transform:translateY(0) scale(1); border-color:rgba(74,222,128,.28); box-shadow:0 4px 18px rgba(74,222,128,.14), 0 1px 3px rgba(11,45,31,.06); }
+.check-reveal-group.in-view .check-reveal:hover{ border-color:rgba(74,222,128,.6); box-shadow:0 8px 26px rgba(74,222,128,.28), 0 2px 6px rgba(11,45,31,.08); transform:translateY(-2px) scale(1.02); }
 .check-reveal-icon{ transition:filter .4s ease; }
-.check-reveal-group.in-view .check-reveal-icon{ filter:drop-shadow(0 0 4px rgba(74,222,128,.7)); }
+.check-reveal-group.in-view .check-reveal-icon{ filter:drop-shadow(0 0 6px rgba(74,222,128,.85)); }
 
 @keyframes ctaGlow{
   0%,100%{ box-shadow:0 0 0px 0px rgba(74,222,128,0); }
@@ -363,43 +363,44 @@ tailwind.config = {
       <span class="text-secondary font-bold text-sm tracking-widest uppercase mb-4 block">Planejamento por região</span>
       <h2 class="font-display-lg text-4xl md:text-5xl text-deep-earth mb-6 font-bold">Culturas mais lucrativas <span class="text-secondary">na sua região</span></h2>
       <p class="text-body-lg text-on-surface-variant mb-10 leading-relaxed">Escolha sua região e o Easyfarm já mostra quais culturas rendem mais por lá. Com números reais de mercado, não achismo. Cada simulação cruza:</p>
-      <div class="check-reveal-group grid sm:grid-cols-2 gap-3">
-          <div class="check-reveal flex items-center gap-3 text-left bg-white rounded-xl px-4 py-3 border border-outline-variant/30 shadow-sm" style="transition-delay:0.00s">
-            <span class="material-symbols-outlined text-secondary text-xl shrink-0 check-reveal-icon">check_circle</span>
-            <span class="text-deep-earth text-sm font-bold">Preço de venda no atacado</span>
+      <div class="check-reveal-group grid grid-cols-2 gap-3 sm:gap-4">
+          <div class="check-reveal flex flex-col items-center text-center gap-2 bg-white rounded-2xl px-3 py-6 border border-outline-variant/30" style="transition-delay:0.00s">
+            <span class="material-symbols-outlined text-secondary text-3xl check-reveal-icon">check_circle</span>
+            <span class="text-deep-earth text-sm font-bold leading-snug tracking-tight">Preço de venda no atacado</span>
           </div>
-          <div class="check-reveal flex items-center gap-3 text-left bg-white rounded-xl px-4 py-3 border border-outline-variant/30 shadow-sm" style="transition-delay:0.08s">
-            <span class="material-symbols-outlined text-secondary text-xl shrink-0 check-reveal-icon">check_circle</span>
-            <span class="text-deep-earth text-sm font-bold">Preço de venda no varejo</span>
+          <div class="check-reveal flex flex-col items-center text-center gap-2 bg-white rounded-2xl px-3 py-6 border border-outline-variant/30" style="transition-delay:0.08s">
+            <span class="material-symbols-outlined text-secondary text-3xl check-reveal-icon">check_circle</span>
+            <span class="text-deep-earth text-sm font-bold leading-snug tracking-tight">Preço de venda no varejo</span>
           </div>
-          <div class="check-reveal flex items-center gap-3 text-left bg-white rounded-xl px-4 py-3 border border-outline-variant/30 shadow-sm" style="transition-delay:0.16s">
-            <span class="material-symbols-outlined text-secondary text-xl shrink-0 check-reveal-icon">check_circle</span>
-            <span class="text-deep-earth text-sm font-bold">Custo com manejo</span>
+          <div class="check-reveal flex flex-col items-center text-center gap-2 bg-white rounded-2xl px-3 py-6 border border-outline-variant/30" style="transition-delay:0.16s">
+            <span class="material-symbols-outlined text-secondary text-3xl check-reveal-icon">check_circle</span>
+            <span class="text-deep-earth text-sm font-bold leading-snug tracking-tight">Custo com manejo</span>
           </div>
-          <div class="check-reveal flex items-center gap-3 text-left bg-white rounded-xl px-4 py-3 border border-outline-variant/30 shadow-sm" style="transition-delay:0.24s">
-            <span class="material-symbols-outlined text-secondary text-xl shrink-0 check-reveal-icon">check_circle</span>
-            <span class="text-deep-earth text-sm font-bold">Custo com sementes</span>
+          <div class="check-reveal flex flex-col items-center text-center gap-2 bg-white rounded-2xl px-3 py-6 border border-outline-variant/30" style="transition-delay:0.24s">
+            <span class="material-symbols-outlined text-secondary text-3xl check-reveal-icon">check_circle</span>
+            <span class="text-deep-earth text-sm font-bold leading-snug tracking-tight">Custo com sementes</span>
           </div>
-          <div class="check-reveal flex items-center gap-3 text-left bg-white rounded-xl px-4 py-3 border border-outline-variant/30 shadow-sm" style="transition-delay:0.32s">
-            <span class="material-symbols-outlined text-secondary text-xl shrink-0 check-reveal-icon">check_circle</span>
-            <span class="text-deep-earth text-sm font-bold">Custo de mão de obra</span>
+          <div class="check-reveal flex flex-col items-center text-center gap-2 bg-white rounded-2xl px-3 py-6 border border-outline-variant/30" style="transition-delay:0.32s">
+            <span class="material-symbols-outlined text-secondary text-3xl check-reveal-icon">check_circle</span>
+            <span class="text-deep-earth text-sm font-bold leading-snug tracking-tight">Custo de mão de obra</span>
           </div>
-          <div class="check-reveal flex items-center gap-3 text-left bg-white rounded-xl px-4 py-3 border border-outline-variant/30 shadow-sm" style="transition-delay:0.40s">
-            <span class="material-symbols-outlined text-secondary text-xl shrink-0 check-reveal-icon">check_circle</span>
-            <span class="text-deep-earth text-sm font-bold">Custo com insumos</span>
+          <div class="check-reveal flex flex-col items-center text-center gap-2 bg-white rounded-2xl px-3 py-6 border border-outline-variant/30" style="transition-delay:0.40s">
+            <span class="material-symbols-outlined text-secondary text-3xl check-reveal-icon">check_circle</span>
+            <span class="text-deep-earth text-sm font-bold leading-snug tracking-tight">Custo com insumos</span>
           </div>
-          <div class="check-reveal flex items-center gap-3 text-left bg-white rounded-xl px-4 py-3 border border-outline-variant/30 shadow-sm" style="transition-delay:0.48s">
-            <span class="material-symbols-outlined text-secondary text-xl shrink-0 check-reveal-icon">check_circle</span>
-            <span class="text-deep-earth text-sm font-bold">Demanda por região</span>
+          <div class="check-reveal flex flex-col items-center text-center gap-2 bg-white rounded-2xl px-3 py-6 border border-outline-variant/30" style="transition-delay:0.48s">
+            <span class="material-symbols-outlined text-secondary text-3xl check-reveal-icon">check_circle</span>
+            <span class="text-deep-earth text-sm font-bold leading-snug tracking-tight">Demanda por região</span>
           </div>
-          <div class="check-reveal flex items-center gap-3 text-left bg-white rounded-xl px-4 py-3 border border-outline-variant/30 shadow-sm" style="transition-delay:0.56s">
-            <span class="material-symbols-outlined text-secondary text-xl shrink-0 check-reveal-icon">check_circle</span>
-            <span class="text-deep-earth text-sm font-bold">Clima da sua área</span>
+          <div class="check-reveal flex flex-col items-center text-center gap-2 bg-white rounded-2xl px-3 py-6 border border-outline-variant/30" style="transition-delay:0.56s">
+            <span class="material-symbols-outlined text-secondary text-3xl check-reveal-icon">check_circle</span>
+            <span class="text-deep-earth text-sm font-bold leading-snug tracking-tight">Clima da sua área</span>
           </div>
-          <div class="check-reveal flex items-center gap-3 text-left bg-white rounded-xl px-4 py-3 border border-outline-variant/30 shadow-sm" style="transition-delay:0.64s">
-            <span class="material-symbols-outlined text-secondary text-xl shrink-0 check-reveal-icon">check_circle</span>
-            <span class="text-deep-earth text-sm font-bold">E muito mais</span>
+          <div class="check-reveal flex flex-col items-center text-center gap-2 bg-white rounded-2xl px-3 py-6 border border-outline-variant/30" style="transition-delay:0.64s">
+            <span class="material-symbols-outlined text-secondary text-3xl check-reveal-icon">check_circle</span>
+            <span class="text-deep-earth text-sm font-bold leading-snug tracking-tight">E muito mais</span>
           </div>
+        
       </div>
     </div>
   </div>
