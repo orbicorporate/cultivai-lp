@@ -797,9 +797,6 @@ tailwind.config = {
   </div>
 </footer>
 
-<div class="mobile-sticky" id="mobileSticky">
-  <a href="https://easyfarm-nine.vercel.app" target="_blank" rel="noopener" class="w-full block text-center bg-sprout-green text-deep-earth py-4 rounded-full font-bold text-base shadow-xl">Testar grátis agora →</a>
-</div>
 
 
 <div class="fixed inset-0 z-[200] hidden items-center justify-center p-4" id="catalogModal">
@@ -1031,14 +1028,7 @@ document.querySelectorAll('.check-reveal-group').forEach(group => {
   groupObserver.observe(group);
 });
 
-const sticky = document.getElementById('mobileSticky');
 const heroEl = document.querySelector('header');
-if (sticky && heroEl) {
-  const heroIO = new IntersectionObserver((entries) => {
-    entries.forEach(e => sticky.classList.toggle('show', !e.isIntersecting));
-  }, { threshold: 0 });
-  heroIO.observe(heroEl);
-}
 
 if (/Android/i.test(navigator.userAgent)) {
   document.querySelector('.install-tab[data-tab="android"]')?.click();
