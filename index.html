@@ -237,16 +237,18 @@ tailwind.config = {
 }
 .card-organic:hover{ transform:translateY(-7px); box-shadow:0 24px 44px -10px rgba(11,45,31,.4), 0 8px 16px rgba(11,45,31,.18); }
 .tone-sage{ background:linear-gradient(155deg,#B7CFA6 0%,#8CAE79 48%,#67885A 100%); }
-.tone-terracotta{ background:linear-gradient(160deg,#A5703C 0%,#7A4D24 50%,#4A2C11 100%); }
+.tone-terracotta{ background:radial-gradient(circle at 25% 8%, rgba(255,255,255,.14), transparent 32%), linear-gradient(155deg,#a45317 0%,#5d2708 78%); }
 .tone-tan{ background:linear-gradient(155deg,#E3CDA3 0%,#CBA876 48%,#A9835B 100%); }
 .tone-burnt-orange{ background:linear-gradient(155deg,#B5652E 0%,#96471F 48%,#733413 100%); }
-.tone-forest{ background:linear-gradient(160deg,#3D7A4C 0%,#26522F 50%,#153A1D 100%); }
-.tone-sunset{ background:linear-gradient(160deg,#C99A45 0%,#8A651F 50%,#4A3510 100%); }
+.tone-forest{ background:radial-gradient(circle at 25% 8%, rgba(255,255,255,.14), transparent 32%), linear-gradient(155deg,#185f35 0%,#06351f 78%); }
+.tone-sunset{ background:radial-gradient(circle at 25% 8%, rgba(255,255,255,.14), transparent 32%), linear-gradient(155deg,#d79216 0%,#8b4805 78%); }
 /* ============ Region info cards (icon + texto + seta, layout horizontal) ============ */
 .region-card{
   position:relative; isolation:isolate; overflow:hidden;
   display:flex; align-items:center; gap:16px;
   padding:18px 20px; border-radius:22px;
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 20px 40px rgba(0,0,0,.22), 0 6px 12px rgba(0,0,0,.16), inset 0 1px 0 rgba(255,255,255,.3), inset 0 -2px 0 rgba(0,0,0,.16);
   transform:perspective(900px) translateY(0);
   transition:transform .35s cubic-bezier(.34,1.1,.64,1), box-shadow .35s ease;
 }
