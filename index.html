@@ -166,14 +166,15 @@ tailwind.config = {
 @keyframes efPulseGlow{ 0%,100%{ box-shadow:0 22px 40px -14px rgba(0,0,0,.55), 0 0 0px rgba(217,255,77,0); } 50%{ box-shadow:0 22px 40px -14px rgba(0,0,0,.55), 0 0 28px rgba(217,255,77,.35); } }
 
 @media(max-width:1024px){ .ef-float-card{ display:none; } }
-.ef-float-mobile-row{ display:flex; gap:10px; overflow-x:auto; margin-top:22px; padding:2px 2px 8px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; }
-.ef-float-mobile-row::-webkit-scrollbar{ display:none; }
-.ef-float-mcard{ scroll-snap-align:start; flex-shrink:0; width:150px; background:rgba(18,52,30,.55); backdrop-filter:blur(18px) saturate(140%); -webkit-backdrop-filter:blur(18px) saturate(140%); border:1px solid rgba(74,222,128,.2); border-radius:18px; padding:13px 14px; box-shadow:0 14px 26px -10px rgba(0,0,0,.5); }
-.ef-float-micon{ width:28px; height:28px; border-radius:9px; display:flex; align-items:center; justify-content:center; margin-bottom:8px; }
-.ef-float-micon .material-symbols-outlined{ font-size:16px; }
-.ef-float-mtitle{ font-family:'Inter',sans-serif; color:#fff; font-size:11.5px; font-weight:600; margin-bottom:4px; }
-.ef-float-mvalue{ font-family:'Inter',sans-serif; color:#fff; font-size:19px; font-weight:800; letter-spacing:-.01em; margin-bottom:1px; }
-.ef-float-msub{ font-family:'Inter',sans-serif; color:rgba(255,255,255,.6); font-size:11px; line-height:1.35; }
+.ef-float-card-sm{ position:absolute; width:135px; z-index:8; background:rgba(18,52,30,.62); backdrop-filter:blur(16px) saturate(150%); -webkit-backdrop-filter:blur(16px) saturate(150%); border:1px solid rgba(74,222,128,.25); border-radius:16px; padding:10px 12px; box-shadow:0 14px 28px -10px rgba(0,0,0,.55); }
+.ef-float-sm-1{ top:-14px; right:-10px; animation:efFloatA 5s ease-in-out infinite; }
+.ef-float-sm-2{ bottom:36px; left:-14px; animation:efFloatB 6s ease-in-out infinite; animation-delay:-1.5s; }
+.ef-float-micon{ width:26px; height:26px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:6px; }
+.ef-float-micon .material-symbols-outlined{ font-size:15px; }
+.ef-float-mtitle{ font-family:'Inter',sans-serif; color:#fff; font-size:10.5px; font-weight:600; margin-bottom:3px; }
+.ef-float-mvalue{ font-family:'Inter',sans-serif; color:#fff; font-size:17px; font-weight:800; letter-spacing:-.01em; margin-bottom:1px; }
+.ef-float-msub{ font-family:'Inter',sans-serif; color:rgba(255,255,255,.6); font-size:10px; line-height:1.3; }
+@media(min-width:1025px){ .ef-float-card-sm{ display:none; } }
 
 /* ============ SISTEMA VISUAL "FLORESTA VIVA" (adicionado) ============ */
 /* --- Botoes/tags/icones em "pilula 3D" (adicionado) --- */
@@ -796,30 +797,18 @@ tailwind.config = {
         <p class="ef-float-sub">Análises inteligentes</p>
       </div>
 
-      <div class="ef-float-mobile-row lg:hidden">
-        <div class="ef-float-mcard">
-          <div class="ef-float-micon" style="background:rgba(74,222,128,.15);"><span class="material-symbols-outlined text-[#4ade80]">trending_up</span></div>
-          <p class="ef-float-mtitle">Lucro <span class="text-[#d9ff4d]">Estimado</span></p>
-          <p class="ef-float-mvalue">R$ 36.000</p>
-          <p class="ef-float-msub">por safra</p>
-        </div>
-        <div class="ef-float-mcard">
-          <div class="ef-float-micon" style="background:rgba(255,255,255,.1);"><span class="material-symbols-outlined text-white">clear_day</span></div>
-          <p class="ef-float-mtitle">Clima Ideal</p>
-          <p class="ef-float-mvalue">24°C</p>
-          <p class="ef-float-msub" style="color:#d9ff4d; font-weight:700;">Boa janela pra plantio</p>
-        </div>
-        <div class="ef-float-mcard">
-          <div class="ef-float-micon" style="background:rgba(74,222,128,.15);"><span class="material-symbols-outlined text-[#4ade80]">layers</span></div>
-          <p class="ef-float-mtitle text-[#4ade80]">Dados</p>
-          <p class="ef-float-msub" style="color:#fff; font-size:12.5px;">reais de mercado na sua região</p>
-        </div>
-        <div class="ef-float-mcard">
-          <div class="ef-float-micon" style="background:rgba(217,255,77,.15);"><span class="material-symbols-outlined text-[#d9ff4d]">auto_awesome</span></div>
-          <p class="ef-float-mtitle">IA <span class="text-[#d9ff4d]">especialista</span></p>
-          <p class="ef-float-mvalue" style="font-size:17px;">117 culturas</p>
-          <p class="ef-float-msub">Análises inteligentes</p>
-        </div>
+      <div class="ef-float-card-sm ef-float-sm-1 lg:hidden">
+        <div class="ef-float-micon" style="background:rgba(74,222,128,.15);"><span class="material-symbols-outlined text-[#4ade80]">trending_up</span></div>
+        <p class="ef-float-mtitle">Lucro <span class="text-[#d9ff4d]">Estimado</span></p>
+        <p class="ef-float-mvalue">R$ 36.000</p>
+        <p class="ef-float-msub">por safra</p>
+      </div>
+
+      <div class="ef-float-card-sm ef-float-sm-2 lg:hidden">
+        <div class="ef-float-micon" style="background:rgba(255,255,255,.1);"><span class="material-symbols-outlined text-white">clear_day</span></div>
+        <p class="ef-float-mtitle">Clima Ideal</p>
+        <p class="ef-float-mvalue">24°C</p>
+        <p class="ef-float-msub" style="color:#d9ff4d; font-weight:700;">Boa janela pra plantio</p>
       </div>
     </div>
   </div>
