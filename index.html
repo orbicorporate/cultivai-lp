@@ -237,11 +237,11 @@ tailwind.config = {
 }
 .card-organic:hover{ transform:translateY(-7px); box-shadow:0 24px 44px -10px rgba(11,45,31,.4), 0 8px 16px rgba(11,45,31,.18); }
 .tone-sage{ background:linear-gradient(155deg,#B7CFA6 0%,#8CAE79 48%,#67885A 100%); }
-.tone-terracotta{ background:linear-gradient(155deg,#B98868 0%,#93624A 48%,#6E4732 100%); }
+.tone-terracotta{ background:linear-gradient(160deg,#A5703C 0%,#7A4D24 50%,#4A2C11 100%); }
 .tone-tan{ background:linear-gradient(155deg,#E3CDA3 0%,#CBA876 48%,#A9835B 100%); }
 .tone-burnt-orange{ background:linear-gradient(155deg,#B5652E 0%,#96471F 48%,#733413 100%); }
-.tone-forest{ background:linear-gradient(155deg,#2f9e52 0%,#1a7a3e 48%,#0e5c2c 100%); }
-.tone-sunset{ background:linear-gradient(150deg,#FDBB6D 0%,#F2994A 45%,#D9761F 100%); }
+.tone-forest{ background:linear-gradient(160deg,#3D7A4C 0%,#26522F 50%,#153A1D 100%); }
+.tone-sunset{ background:linear-gradient(160deg,#C99A45 0%,#8A651F 50%,#4A3510 100%); }
 /* ============ Region info cards (icon + texto + seta, layout horizontal) ============ */
 .region-card{
   position:relative; isolation:isolate; overflow:hidden;
@@ -259,7 +259,7 @@ tailwind.config = {
 .region-card:hover{ transform:perspective(900px) translateY(-4px); box-shadow:0 20px 38px -10px rgba(11,45,31,.35); }
 .region-card-icon{
   position:relative; z-index:1; flex-shrink:0;
-  width:56px; height:56px; border-radius:9999px;
+  width:56px; height:56px; border-radius:16px;
   display:grid; place-items:center;
   background:linear-gradient(150deg, rgba(255,255,255,.32), rgba(255,255,255,.06));
   border:1px solid rgba(255,255,255,.28);
@@ -293,6 +293,13 @@ tailwind.config = {
   position:relative; z-index:1; flex-shrink:0;
   color:rgba(255,255,255,.9); font-size:20px;
 }
+.region-card-glowbar{ position:relative; z-index:1; margin-top:10px; width:64px; height:3px; border-radius:99px; overflow:visible; }
+.region-card.tone-forest .region-card-glowbar{ background:linear-gradient(90deg,#7CFFA0,rgba(124,255,160,0)); box-shadow:0 0 10px 2px rgba(124,255,160,.55); animation:barGlowGreen 2.6s ease-in-out infinite; }
+.region-card.tone-terracotta .region-card-glowbar{ background:linear-gradient(90deg,#FFB067,rgba(255,176,103,0)); box-shadow:0 0 10px 2px rgba(255,176,103,.55); animation:barGlowEarth 2.6s ease-in-out infinite; }
+.region-card.tone-sunset .region-card-glowbar{ background:linear-gradient(90deg,#FFD666,rgba(255,214,102,0)); box-shadow:0 0 10px 2px rgba(255,214,102,.55); animation:barGlowGold 2.6s ease-in-out infinite; }
+@keyframes barGlowGreen{ 0%,100%{ box-shadow:0 0 8px 1px rgba(124,255,160,.4); } 50%{ box-shadow:0 0 16px 4px rgba(124,255,160,.75); } }
+@keyframes barGlowEarth{ 0%,100%{ box-shadow:0 0 8px 1px rgba(255,176,103,.4); } 50%{ box-shadow:0 0 16px 4px rgba(255,176,103,.75); } }
+@keyframes barGlowGold{ 0%,100%{ box-shadow:0 0 8px 1px rgba(255,214,102,.4); } 50%{ box-shadow:0 0 16px 4px rgba(255,214,102,.75); } }
 @media(max-width:680px){
   .region-card{ padding:16px; gap:14px; }
   .region-card-icon{ width:48px; height:48px; }
@@ -980,6 +987,7 @@ tailwind.config = {
               <div class="region-card-title">Preço de venda<br>no atacado</div>
               <div class="region-card-rule"><span></span><span></span></div>
               <div class="region-card-desc">Valores reais do mercado.</div>
+            <div class="region-card-glowbar"></div>
             </div>
           </div>
           <div class="check-reveal region-card tone-terracotta" style="transition-delay:0.06s">
@@ -988,6 +996,7 @@ tailwind.config = {
               <div class="region-card-title">Preço de venda<br>no varejo</div>
               <div class="region-card-rule"><span></span><span></span></div>
               <div class="region-card-desc">O que o mercado paga de verdade na sua região.</div>
+            <div class="region-card-glowbar"></div>
             </div>
           </div>
           <div class="check-reveal region-card tone-sunset" style="transition-delay:0.12s">
@@ -996,6 +1005,7 @@ tailwind.config = {
               <div class="region-card-title">Custo com<br>manejo</div>
               <div class="region-card-rule"><span></span><span></span></div>
               <div class="region-card-desc">Insumos, operações e manutenção na prática.</div>
+            <div class="region-card-glowbar"></div>
             </div>
           </div>
           <div class="check-reveal region-card tone-forest" style="transition-delay:0.18s">
@@ -1004,6 +1014,7 @@ tailwind.config = {
               <div class="region-card-title">Custo com<br>sementes</div>
               <div class="region-card-rule"><span></span><span></span></div>
               <div class="region-card-desc">Invista certo desde o início da produção.</div>
+            <div class="region-card-glowbar"></div>
             </div>
           </div>
           <div class="check-reveal region-card tone-terracotta" style="transition-delay:0.24s">
@@ -1012,6 +1023,7 @@ tailwind.config = {
               <div class="region-card-title">Custo de mão<br>de obra</div>
               <div class="region-card-rule"><span></span><span></span></div>
               <div class="region-card-desc">Cálculo real por etapa da produção.</div>
+            <div class="region-card-glowbar"></div>
             </div>
           </div>
           <div class="check-reveal region-card tone-forest" style="transition-delay:0.30s">
@@ -1020,6 +1032,7 @@ tailwind.config = {
               <div class="region-card-title">Custo com<br>insumos</div>
               <div class="region-card-rule"><span></span><span></span></div>
               <div class="region-card-desc">Fertilizantes, defensivos e demais insumos.</div>
+            <div class="region-card-glowbar"></div>
             </div>
           </div>
           <div class="check-reveal region-card tone-forest" style="transition-delay:0.36s">
@@ -1028,6 +1041,7 @@ tailwind.config = {
               <div class="region-card-title">Demanda por<br>região</div>
               <div class="region-card-rule"><span></span><span></span></div>
               <div class="region-card-desc">Veja onde está a oportunidade.</div>
+            <div class="region-card-glowbar"></div>
             </div>
           </div>
           <div class="check-reveal region-card tone-terracotta" style="transition-delay:0.42s">
@@ -1036,6 +1050,7 @@ tailwind.config = {
               <div class="region-card-title">Clima da<br>sua área</div>
               <div class="region-card-rule"><span></span><span></span></div>
               <div class="region-card-desc">Informações climáticas para planejar melhor.</div>
+            <div class="region-card-glowbar"></div>
             </div>
           </div>
           <div class="check-reveal region-card tone-sunset" style="transition-delay:0.48s">
@@ -1044,6 +1059,7 @@ tailwind.config = {
               <div class="region-card-title">E muito<br>mais</div>
               <div class="region-card-rule"><span></span><span></span></div>
               <div class="region-card-desc">Recursos avançados para você tomar as melhores decisões.</div>
+            <div class="region-card-glowbar"></div>
             </div>
           </div>
           <div class="check-reveal region-card tone-forest" style="transition-delay:0.54s">
@@ -1052,6 +1068,7 @@ tailwind.config = {
               <div class="region-card-title">Plano de ação<br>detalhado</div>
               <div class="region-card-rule"><span></span><span></span></div>
               <div class="region-card-desc">Passo a passo para colocar suas decisões em prática.</div>
+            <div class="region-card-glowbar"></div>
             </div>
           </div>
       </div>
